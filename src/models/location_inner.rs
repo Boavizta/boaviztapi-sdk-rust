@@ -12,27 +12,12 @@
 
 
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
-pub struct ModelServer {
-    #[serde(rename = "manufacturer", skip_serializing_if = "Option::is_none")]
-    pub manufacturer: Option<String>,
-    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
-    #[serde(rename = "type", skip_serializing_if = "Option::is_none")]
-    pub _type: Option<String>,
-    #[serde(rename = "year", skip_serializing_if = "Option::is_none")]
-    pub year: Option<String>,
-    #[serde(rename = "archetype", skip_serializing_if = "Option::is_none")]
-    pub archetype: Option<String>,
+pub struct LocationInner {
 }
 
-impl ModelServer {
-    pub fn new() -> ModelServer {
-        ModelServer {
-            manufacturer: None,
-            name: None,
-            _type: None,
-            year: None,
-            archetype: None,
+impl LocationInner {
+    pub fn new() -> LocationInner {
+        LocationInner {
         }
     }
 }

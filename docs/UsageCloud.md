@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hash** | Option<**String**> |  | [optional]
-**TYPE** | Option<**String**> |  | [optional][default to USAGE]
+**type** | Option<**String**> |  | [optional][default to USAGE]
 **years_use_time** | Option<**f32**> |  | [optional]
 **days_use_time** | Option<**f32**> |  | [optional]
 **hours_use_time** | Option<**f32**> |  | [optional]
