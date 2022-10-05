@@ -1,8 +1,13 @@
 [package]
 name = "boavizta_api_sdk"
 version = "0.1.1-alpha.1"
-authors = ["boavizta.org"]
+description = "A Rust client/sdk to access Boavizta API"
+homepage = "https://boavizta.org"
+repository = "https://github.com/Boavizta/boaviztapi-sdk-rust/"
+readme = "README.md"
+authors = ["boavizta.org", "olivier de Meringo"]
 edition = "2018"
+license-file = "LICENSE"
 
 [dependencies]
 serde = "^1.0"
