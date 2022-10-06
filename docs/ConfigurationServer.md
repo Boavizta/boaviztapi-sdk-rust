@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cpu** | Option<[**crate::models::Cpu**](Cpu.md)> |  | [optional]
-**ram** | Option<[**Vec<crate::models::Ram>**](Ram.md)> |  | [optional]
+**cpu** | Option<[**crate::models::Cpu**](CPU.md)> |  | [optional]
+**ram** | Option<[**Vec<crate::models::Ram>**](RAM.md)> |  | [optional]
 **disk** | Option<[**Vec<crate::models::Disk>**](Disk.md)> |  | [optional]
 **power_supply** | Option<[**crate::models::PowerSupply**](PowerSupply.md)> |  | [optional]
 

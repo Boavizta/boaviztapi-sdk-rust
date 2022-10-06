@@ -1,12 +1,11 @@
-# PowerSupply
+# ConsumptionProfileCpu
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**units** | Option<**i32**> |  | [optional][default to 1]
-**usage** | Option<[**crate::models::Usage1**](Usage_1.md)> |  | [optional]
-**unit_weight** | Option<**f32**> |  | [optional]
+**workload** | Option<[**Vec<crate::models::WorkloadPower>**](WorkloadPower.md)> |  | [optional]
+**cpu** | Option<[**crate::models::Cpu**](CPU.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
