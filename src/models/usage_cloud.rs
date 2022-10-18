@@ -24,8 +24,11 @@ pub struct UsageCloud {
     pub years_life_time: Option<f32>,
     #[serde(rename = "hours_electrical_consumption", skip_serializing_if = "Option::is_none")]
     pub hours_electrical_consumption: Option<f32>,
+    // Temporary workaround until better fix:  force time_workload as a float (instead of generated code that is not usable)
+    // In practice, this limits the use of API: we can only query API by passing an average CPU  load for the entire duration of the usage.
+    // See https://github.com/Boavizta/boaviztapi-sdk-rust/issues/6
     #[serde(rename = "time_workload", skip_serializing_if = "Option::is_none")]
-    pub time_workload: Option<Box<crate::models::TimeWorkload>>,
+    pub time_workload: Option<f32>,
     #[serde(rename = "usage_location", skip_serializing_if = "Option::is_none")]
     pub usage_location: Option<String>,
     #[serde(rename = "gwp_factor", skip_serializing_if = "Option::is_none")]
