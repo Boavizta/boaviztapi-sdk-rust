@@ -19,7 +19,7 @@ pub struct Disk {
     #[serde(rename = "usage", skip_serializing_if = "Option::is_none")]
     pub usage: Option<Box<crate::models::Usage1>>,
     #[serde(rename = "type", skip_serializing_if = "Option::is_none")]
-    pub _type: Option<String>,
+    pub r#type: Option<String>,
     #[serde(rename = "capacity", skip_serializing_if = "Option::is_none")]
     pub capacity: Option<i32>,
     #[serde(rename = "density", skip_serializing_if = "Option::is_none")]
@@ -36,7 +36,7 @@ impl Disk {
         Disk {
             units: None,
             usage: None,
-            _type: None,
+            r#type: None,
             capacity: None,
             density: None,
             manufacturer: None,

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **loc** | [**Vec<crate::models::LocationInner>**](Location_inner.md) |  | 
 **msg** | **String** |  | 
-**_type** | **String** |  | 
+**r#type** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

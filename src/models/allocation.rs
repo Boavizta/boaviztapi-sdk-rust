@@ -14,24 +14,24 @@
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Allocation {
     #[serde(rename = "LINEAR")]
-    LINEAR,
+    Linear,
     #[serde(rename = "TOTAL")]
-    TOTAL,
+    Total,
 
 }
 
 impl ToString for Allocation {
     fn to_string(&self) -> String {
         match self {
-            Self::LINEAR => String::from("LINEAR"),
-            Self::TOTAL => String::from("TOTAL"),
+            Self::Linear => String::from("LINEAR"),
+            Self::Total => String::from("TOTAL"),
         }
     }
 }
 
 impl Default for Allocation {
     fn default() -> Allocation {
-        Self::LINEAR
+        Self::Linear
     }
 }
 

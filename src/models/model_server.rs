@@ -19,7 +19,7 @@ pub struct ModelServer {
     #[serde(rename = "archetype", skip_serializing_if = "Option::is_none")]
     pub archetype: Option<String>,
     #[serde(rename = "type", skip_serializing_if = "Option::is_none")]
-    pub _type: Option<String>,
+    pub r#type: Option<String>,
 }
 
 impl ModelServer {
@@ -28,7 +28,7 @@ impl ModelServer {
         ModelServer {
             name: None,
             archetype: None,
-            _type: None,
+            r#type: None,
         }
     }
 }
