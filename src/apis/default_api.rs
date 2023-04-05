@@ -15,31 +15,25 @@ use crate::apis::ResponseContent;
 use super::{Error, configuration};
 
 
-/// struct for typed errors of method [`cpu_consumption_profile_v1_consumption_profile_cpu_post`]
+/// struct for typed errors of method [`welcom_page_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum CpuConsumptionProfileV1ConsumptionProfileCpuPostError {
-    Status422(crate::models::HttpValidationError),
+pub enum WelcomPageGetError {
     UnknownValue(serde_json::Value),
 }
 
 
-/// cpu consumption profile generator
-pub async fn cpu_consumption_profile_v1_consumption_profile_cpu_post(configuration: &configuration::Configuration, verbose: Option<bool>, consumption_profile_cpu: Option<crate::models::ConsumptionProfileCpu>) -> Result<serde_json::Value, Error<CpuConsumptionProfileV1ConsumptionProfileCpuPostError>> {
+pub async fn welcom_page_get(configuration: &configuration::Configuration, ) -> Result<String, Error<WelcomPageGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/consumption_profile/cpu", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+    let local_var_uri_str = format!("{}/", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
-    if let Some(ref local_var_str) = verbose {
-        local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
-    }
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    local_var_req_builder = local_var_req_builder.json(&consumption_profile_cpu);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -50,7 +44,7 @@ pub async fn cpu_consumption_profile_v1_consumption_profile_cpu_post(configurati
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CpuConsumptionProfileV1ConsumptionProfileCpuPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<WelcomPageGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

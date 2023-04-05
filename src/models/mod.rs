@@ -2,6 +2,8 @@ pub mod allocation;
 pub use self::allocation::Allocation;
 pub mod case;
 pub use self::case::Case;
+pub mod cloud;
+pub use self::cloud::Cloud;
 pub mod configuration_server;
 pub use self::configuration_server::ConfigurationServer;
 pub mod consumption_profile_cpu;

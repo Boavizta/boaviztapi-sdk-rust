@@ -27,7 +27,7 @@ Case Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |
+**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |[default to TOTAL]
 **case** | Option<[**Case**](Case.md)> |  |  |
 
 ### Return type
@@ -59,7 +59,7 @@ Cpu Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |
+**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |[default to TOTAL]
 **cpu** | Option<[**Cpu**](Cpu.md)> |  |  |
 
 ### Return type
@@ -91,7 +91,7 @@ Disk Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |
+**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |[default to TOTAL]
 **disk** | Option<[**Disk**](Disk.md)> |  |  |
 
 ### Return type
@@ -123,7 +123,7 @@ Disk Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |
+**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |[default to TOTAL]
 **disk** | Option<[**Disk**](Disk.md)> |  |  |
 
 ### Return type
@@ -155,7 +155,7 @@ Motherboard Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |
+**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |[default to TOTAL]
 **motherboard** | Option<[**Motherboard**](Motherboard.md)> |  |  |
 
 ### Return type
@@ -187,7 +187,7 @@ Power Supply Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |
+**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |[default to TOTAL]
 **power_supply** | Option<[**PowerSupply**](PowerSupply.md)> |  |  |
 
 ### Return type
@@ -219,7 +219,7 @@ Ram Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |
+**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |[default to TOTAL]
 **ram** | Option<[**Ram**](Ram.md)> |  |  |
 
 ### Return type

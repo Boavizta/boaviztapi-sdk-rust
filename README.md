@@ -4,11 +4,12 @@ Rust client library for [Boaviztapi](https://github.com/Boavizta/boaviztapi).
 
 ## Documentation
 
-Boavizta [API documentation](https://doc.api.boavizta.org/)
+- SDK documentation (crate) [boavizta_api_sdk - Rust](https://docs.rs/boavizta_api_sdk/latest/boavizta_api_sdk/)
+- Boavizta [API documentation](https://doc.api.boavizta.org/)
 
-## How to generate / update the API
+## How to generate  the sdk for the latest version of  BoaviztaAPI
 
-API is generated from the published openAPI specification of Boaviztapi (<http://api.boavizta.org/openapi.json>).
+SDK is generated from the published openAPI specification of Boaviztapi (<http://api.boavizta.org/openapi.json>).
 
 We use openapi-generator-cli to generate the SDK. See [GitHub - OpenAPITools/openapi-generator-cli: A node package wrapper for https://github.com/OpenAPITools/openapi-generator](https://github.com/OpenAPITools/openapi-generator-cli) .
 
@@ -18,7 +19,15 @@ docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate -
 
 The generated code require some manual updates before being usable.
 
-### Update the Cargo.toml
+## How to generate SDK for a specific version of API
+
+To generate the SDK for a *specific* version of BoaviztaAPI (e.g.  a dev branch or unreleased version), you have to:
+
+1. retrieve the openapi.yml specification of the API
+2. run the generator against this file
+3. if needed publish the generated SDK wth an alpha version
+
+### Update the Cargo.toml before publishing the SDK
 
 Metadata of Cargo.toml are overwritten by generation.
 

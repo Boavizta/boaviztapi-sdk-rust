@@ -50,7 +50,7 @@ Server Impact From Configuration
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |
+**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |[default to TOTAL]
 **server** | Option<[**Server**](Server.md)> |  |  |
 
 ### Return type
@@ -83,7 +83,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **archetype** | Option<**String**> |  |  |
 **verbose** | Option<**bool**> |  |  |[default to true]
-**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |
+**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |[default to TOTAL]
 
 ### Return type
 
