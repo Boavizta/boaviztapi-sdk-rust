@@ -1,12 +1,11 @@
-# ValidationError
+# WorkloadTime
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**loc** | [**Vec<crate::models::LocationInner>**](Location_inner.md) |  | 
-**msg** | **String** |  | 
-**r#type** | **String** |  | 
+**time_percentage** | Option<**f32**> |  | [optional]
+**load_percentage** | Option<**f32**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

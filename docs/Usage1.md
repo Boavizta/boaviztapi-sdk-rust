@@ -1,4 +1,4 @@
-# UsageServer
+# Usage1
 
 ## Properties
 
@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **gwp_factor** | Option<**f32**> |  | [optional]
 **pe_factor** | Option<**f32**> |  | [optional]
 **adp_factor** | Option<**f32**> |  | [optional]
-**other_consumption_ratio** | Option<**f32**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

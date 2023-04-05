@@ -1,6 +1,6 @@
 [package]
 name = "boavizta_api_sdk"
-version = "0.1.2"
+version = "0.2.2"
 description = "A Rust client/sdk to access Boavizta API"
 homepage = "https://boavizta.org"
 repository = "https://github.com/Boavizta/boaviztapi-sdk-rust/"
@@ -14,9 +14,9 @@ serde = "^1.0"
 serde_derive = "^1.0"
 serde_json = "^1.0"
 url = "^2.2"
+uuid = { version = "^1.0", features = ["serde"] }
 [dependencies.reqwest]
 version = "^0.11"
 default-features = false 
 features = ["json", "multipart", "rustls-tls"]
 
-[dev-dependencies]

@@ -15,73 +15,68 @@ use crate::apis::ResponseContent;
 use super::{Error, configuration};
 
 
-/// struct for typed errors of method [`instance_cloud_impact_v1_cloud_get`]
+/// struct for typed errors of method [`name_to_cpu_v1_utils_name_to_cpu_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum InstanceCloudImpactV1CloudGetError {
+pub enum NameToCpuV1UtilsNameToCpuGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`instance_cloud_impact_v1_cloud_post`]
+/// struct for typed errors of method [`utils_get_all_case_type_v1_utils_case_type_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum InstanceCloudImpactV1CloudPostError {
-    Status422(crate::models::HttpValidationError),
+pub enum UtilsGetAllCaseTypeV1UtilsCaseTypeGetError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`legacy_instance_cloud_impact_v1_cloud_aws_post`]
+/// struct for typed errors of method [`utils_get_all_countries_v1_utils_country_code_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum LegacyInstanceCloudImpactV1CloudAwsPostError {
-    Status422(crate::models::HttpValidationError),
+pub enum UtilsGetAllCountriesV1UtilsCountryCodeGetError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`legacy_server_get_all_archetype_name_v1_cloud_aws_all_instances_get`]
+/// struct for typed errors of method [`utils_get_all_cpu_family_v1_utils_cpu_family_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum LegacyServerGetAllArchetypeNameV1CloudAwsAllInstancesGetError {
+pub enum UtilsGetAllCpuFamilyV1UtilsCpuFamilyGetError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`server_get_all_archetype_name_v1_cloud_all_instances_get`]
+/// struct for typed errors of method [`utils_get_all_cpu_model_range_v1_utils_cpu_model_range_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum ServerGetAllArchetypeNameV1CloudAllInstancesGetError {
-    Status422(crate::models::HttpValidationError),
+pub enum UtilsGetAllCpuModelRangeV1UtilsCpuModelRangeGetError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`server_get_all_provider_name_v1_cloud_all_providers_get`]
+/// struct for typed errors of method [`utils_get_all_ram_manufacturer_v1_utils_ram_manufacturer_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum ServerGetAllProviderNameV1CloudAllProvidersGetError {
+pub enum UtilsGetAllRamManufacturerV1UtilsRamManufacturerGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`utils_get_all_ssd_manufacturer_v1_utils_ssd_manufacturer_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum UtilsGetAllSsdManufacturerV1UtilsSsdManufacturerGetError {
     UnknownValue(serde_json::Value),
 }
 
 
-/// # ✔ ️Cloud instance impacts from provider, instance type and usage  Retrieve the impacts of a given Cloud instance and usage.  ### Features  📋 Provider   Name of the cloud provider. You can retrieve the [list here](#/cloud_instance/server_get_all_cloud_providers).  📋 Instance type   Name of the chosen instance. You can retrieve the [list here](#/cloud/server_get_archetype_name_v1_cloud_all_aws_instances_get).  👄 Verbose  🔨 Manufacture  🔌 Usage   * 📈 Modeled  📋 Archetype : The configuration is set by the API, only usage is given by the user  ⏬ Allocation
-pub async fn instance_cloud_impact_v1_cloud_get(configuration: &configuration::Configuration, provider: Option<&str>, instance_type: Option<&str>, verbose: Option<bool>, allocation: Option<crate::models::Allocation>) -> Result<serde_json::Value, Error<InstanceCloudImpactV1CloudGetError>> {
+/// # ✔ ️Complete a cpu attributes from a cpu name
+pub async fn name_to_cpu_v1_utils_name_to_cpu_get(configuration: &configuration::Configuration, cpu_name: Option<&str>) -> Result<serde_json::Value, Error<NameToCpuV1UtilsNameToCpuGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/cloud/", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/utils/name_to_cpu", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
-    if let Some(ref local_var_str) = provider {
-        local_var_req_builder = local_var_req_builder.query(&[("provider", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = instance_type {
-        local_var_req_builder = local_var_req_builder.query(&[("instance_type", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = verbose {
-        local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = allocation {
-        local_var_req_builder = local_var_req_builder.query(&[("allocation", &local_var_str.to_string())]);
+    if let Some(ref local_var_str) = cpu_name {
+        local_var_req_builder = local_var_req_builder.query(&[("cpu_name", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
@@ -96,92 +91,19 @@ pub async fn instance_cloud_impact_v1_cloud_get(configuration: &configuration::C
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<InstanceCloudImpactV1CloudGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<NameToCpuV1UtilsNameToCpuGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️Cloud instance impacts from provider, instance type and usage  Retrieve the impacts of a given Cloud instance and usage.  ### Features  📋 Provider   Name of the cloud provider. You can retrieve the [list here](#/cloud_instance/server_get_all_cloud_providers).  📋 Instance type   Name of the chosen instance. You can retrieve the [list here](#/cloud/server_get_archetype_name_v1_cloud_all_aws_instances_get).  👄 Verbose  🔨 Manufacture  🔌 Usage   * 📈 Modeled  📋 Archetype : The configuration is set by the API, only usage is given by the user  ⏬ Allocation
-pub async fn instance_cloud_impact_v1_cloud_post(configuration: &configuration::Configuration, verbose: Option<bool>, allocation: Option<crate::models::Allocation>, cloud: Option<crate::models::Cloud>) -> Result<serde_json::Value, Error<InstanceCloudImpactV1CloudPostError>> {
+/// # ✔ ️Get all the available case type in the API (*model:{case:'blade'}*)
+pub async fn utils_get_all_case_type_v1_utils_case_type_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<UtilsGetAllCaseTypeV1UtilsCaseTypeGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/cloud/", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_str) = verbose {
-        local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = allocation {
-        local_var_req_builder = local_var_req_builder.query(&[("allocation", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-    local_var_req_builder = local_var_req_builder.json(&cloud);
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<InstanceCloudImpactV1CloudPostError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-/// # ✔ (LEGACY) ️AWS instance impacts from instance type and usage  Retrieve the impacts of a given AWS instance and usage.  ### Features  📋 Instance type   AWS name of the chosen instance. You can retrieve the [list here](#/cloud/server_get_all_archetype_name_v1_cloud_all_aws_instances_get).  👄 Verbose  🔨 Manufacture  🔌 Usage   * 📈 Modeled  📋 Archetype : The configuration is set by the API, only usage is given by the user  ⏬ Allocation
-pub async fn legacy_instance_cloud_impact_v1_cloud_aws_post(configuration: &configuration::Configuration, instance_type: Option<&str>, verbose: Option<bool>, allocation: Option<crate::models::Allocation>, usage_cloud: Option<crate::models::UsageCloud>) -> Result<serde_json::Value, Error<LegacyInstanceCloudImpactV1CloudAwsPostError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/cloud/aws", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_str) = instance_type {
-        local_var_req_builder = local_var_req_builder.query(&[("instance_type", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = verbose {
-        local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = allocation {
-        local_var_req_builder = local_var_req_builder.query(&[("allocation", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-    local_var_req_builder = local_var_req_builder.json(&usage_cloud);
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<LegacyInstanceCloudImpactV1CloudAwsPostError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-/// # ✔ (LEGACY)️ Get all the available aws instances 📜 Return the name of all pre-registered aws instances
-pub async fn legacy_server_get_all_archetype_name_v1_cloud_aws_all_instances_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<LegacyServerGetAllArchetypeNameV1CloudAwsAllInstancesGetError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/cloud/aws/all_instances", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/utils/case_type", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -197,50 +119,19 @@ pub async fn legacy_server_get_all_archetype_name_v1_cloud_aws_all_instances_get
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<LegacyServerGetAllArchetypeNameV1CloudAwsAllInstancesGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<UtilsGetAllCaseTypeV1UtilsCaseTypeGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️Get all the available instances for a given Cloud provider 📜 Return the name of all pre-registered instances for the Cloud provider
-pub async fn server_get_all_archetype_name_v1_cloud_all_instances_get(configuration: &configuration::Configuration, provider: Option<&str>) -> Result<serde_json::Value, Error<ServerGetAllArchetypeNameV1CloudAllInstancesGetError>> {
+/// # ✔ ️Get all the available countries with their trigram code (*usage:{usage_location: 'FRA'}*)
+pub async fn utils_get_all_countries_v1_utils_country_code_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<UtilsGetAllCountriesV1UtilsCountryCodeGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/cloud/all_instances", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_str) = provider {
-        local_var_req_builder = local_var_req_builder.query(&[("provider", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<ServerGetAllArchetypeNameV1CloudAllInstancesGetError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-/// # ✔ ️Get all the available Cloud providers 📜 Return the names of all pre-registered Cloud providers
-pub async fn server_get_all_provider_name_v1_cloud_all_providers_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<ServerGetAllProviderNameV1CloudAllProvidersGetError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/cloud/all_providers", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/utils/country_code", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -256,7 +147,119 @@ pub async fn server_get_all_provider_name_v1_cloud_all_providers_get(configurati
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ServerGetAllProviderNameV1CloudAllProvidersGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<UtilsGetAllCountriesV1UtilsCountryCodeGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// # ✔ ️Get all the available cpu family in the API (*cpu:{family:'skylake'}*)
+pub async fn utils_get_all_cpu_family_v1_utils_cpu_family_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<UtilsGetAllCpuFamilyV1UtilsCpuFamilyGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/utils/cpu_family", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<UtilsGetAllCpuFamilyV1UtilsCpuFamilyGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// # ✔ ️Get all the available cpu family in the API (*cpu:{model_range:'xeon platinum'}*)
+pub async fn utils_get_all_cpu_model_range_v1_utils_cpu_model_range_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<UtilsGetAllCpuModelRangeV1UtilsCpuModelRangeGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/utils/cpu_model_range", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<UtilsGetAllCpuModelRangeV1UtilsCpuModelRangeGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// # ✔ ️Get all the available ram manufacturer in the API (*ram:{manufacturer:'samsung'}*)
+pub async fn utils_get_all_ram_manufacturer_v1_utils_ram_manufacturer_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<UtilsGetAllRamManufacturerV1UtilsRamManufacturerGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/utils/ram_manufacturer", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<UtilsGetAllRamManufacturerV1UtilsRamManufacturerGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// # ✔ ️Get all the available ssd manufacturer in the API (*ssd:{manufacturer:'samsung'}*)
+pub async fn utils_get_all_ssd_manufacturer_v1_utils_ssd_manufacturer_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<UtilsGetAllSsdManufacturerV1UtilsSsdManufacturerGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/utils/ssd_manufacturer", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<UtilsGetAllSsdManufacturerV1UtilsSsdManufacturerGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

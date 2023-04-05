@@ -16,10 +16,10 @@ Method | HTTP request | Description
 
 ## case_impact_bottom_up_v1_component_case_post
 
-> serde_json::Value case_impact_bottom_up_v1_component_case_post(verbose, case)
+> serde_json::Value case_impact_bottom_up_v1_component_case_post(verbose, allocation, case)
 Case Impact Bottom Up
 
-# ✔️Case impacts from configuration ### 💡 Smart complete All missing data are retrieve with the closest available values. If no data are available default maximizing data are used  ### 👄 Verbose If set at true, shows the the values used for each attribute*Components have no units since they represent a single instance of a component.* ### 🧮 Measure The impacts values are set by default
+# ✔ ️Case impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Manufacture  <h3>psu<sub>manuf<sub><em>criteria</em></sub></sub> = psu<sub>unit<sub>weight</sub></sub> x psu<sub>manuf_weight<sub><em>criteria</em></sub></sub></h3> 🔌 Usage  * ⏺️  Given : when the enclosure consumes energy   ⏬ Allocation
 
 ### Parameters
 
@@ -27,6 +27,7 @@ Case Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
+**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |[default to TOTAL]
 **case** | Option<[**Case**](Case.md)> |  |  |
 
 ### Return type
@@ -47,10 +48,10 @@ No authorization required
 
 ## cpu_impact_bottom_up_v1_component_cpu_post
 
-> serde_json::Value cpu_impact_bottom_up_v1_component_cpu_post(verbose, cpu)
+> serde_json::Value cpu_impact_bottom_up_v1_component_cpu_post(verbose, allocation, cpu)
 Cpu Impact Bottom Up
 
-# ✔️CPU impacts from configuration ### 💡 Smart complete All missing data are retrieve with the closest available values. If no data are available default maximizing data are used  ### 👄 Verbose If set at true, shows the the values used for each attribute*Components have no units since they represent a single instance of a component.* ### 🧮 Measure <h3>cpu<sub>manuf<sub><em>criteria</em></sub></sub> = ( cpu<sub>core<sub>units</sub></sub> x cpu<sub>diesize</sub> + 0,491 ) x cpu<sub>manuf_die<sub><em>criteria</em></sub></sub> + cpu<sub>manuf_base<sub><em>criteria</em></sub></sub></h3> 
+# ✔ ️CPU impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Manufacture  <h3>cpu<sub>manuf<sub><em>criteria</em></sub></sub> = ( cpu<sub>core<sub>units</sub></sub> x cpu<sub>diesize</sub> + 0,491 ) x cpu<sub>manuf_die<sub><em>criteria</em></sub></sub> + cpu<sub>manuf_base<sub><em>criteria</em></sub></sub></h3> 🔌 Usage  * ⏺️  Given  * 📈 Modeled  ⏬ Allocation
 
 ### Parameters
 
@@ -58,6 +59,7 @@ Cpu Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
+**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |[default to TOTAL]
 **cpu** | Option<[**Cpu**](Cpu.md)> |  |  |
 
 ### Return type
@@ -78,10 +80,10 @@ No authorization required
 
 ## disk_impact_bottom_up_v1_component_hdd_post
 
-> serde_json::Value disk_impact_bottom_up_v1_component_hdd_post(verbose, disk)
+> serde_json::Value disk_impact_bottom_up_v1_component_hdd_post(verbose, allocation, disk)
 Disk Impact Bottom Up
 
-# ✔️HDD impacts from configuration ### 💡 Smart complete All missing data are retrieve with the closest available values. If no data are available default maximizing data are used  ### 👄 Verbose If set at true, shows the the values used for each attribute*Components have no units since they represent a single instance of a component.* ### 🧮 Measure The impacts values are set by default
+# ✔ ️HDD impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Manufacture  The impacts values are set by default🔌 Usage  * ⏺️  Given  ⏬ Allocation
 
 ### Parameters
 
@@ -89,6 +91,7 @@ Disk Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
+**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |[default to TOTAL]
 **disk** | Option<[**Disk**](Disk.md)> |  |  |
 
 ### Return type
@@ -109,10 +112,10 @@ No authorization required
 
 ## disk_impact_bottom_up_v1_component_ssd_post
 
-> serde_json::Value disk_impact_bottom_up_v1_component_ssd_post(verbose, disk)
+> serde_json::Value disk_impact_bottom_up_v1_component_ssd_post(verbose, allocation, disk)
 Disk Impact Bottom Up
 
-# ✔️SSD impacts from configuration ### 💡 Smart complete All missing data are retrieve with the closest available values. If no data are available default maximizing data are used  ### 👄 Verbose If set at true, shows the the values used for each attribute*Components have no units since they represent a single instance of a component.* ### 🧮 Measure <h3>ssd<sub>manuf<sub><em>criteria</em></sub></sub> =  ( ssd<sub>size</sub> ssd<sub>density</sub> ) x ssd<sub>manuf_die<sub><em>criteria</em></sub></sub> + ssd<sub>manuf_base<sub><em>criteria</em></sub></sub></h3> 
+# ✔ ️SSD impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Manufacture  <h3>ssd<sub>manuf<sub><em>criteria</em></sub></sub> =  ( ssd<sub>size</sub> ssd<sub>density</sub> ) x ssd<sub>manuf_die<sub><em>criteria</em></sub></sub> + ssd<sub>manuf_base<sub><em>criteria</em></sub></sub></h3>🔌 Usage  * ⏺️  Given  ⏬ Allocation
 
 ### Parameters
 
@@ -120,6 +123,7 @@ Disk Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
+**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |[default to TOTAL]
 **disk** | Option<[**Disk**](Disk.md)> |  |  |
 
 ### Return type
@@ -140,10 +144,10 @@ No authorization required
 
 ## motherboard_impact_bottom_up_v1_component_motherboard_post
 
-> serde_json::Value motherboard_impact_bottom_up_v1_component_motherboard_post(verbose, mother_board)
+> serde_json::Value motherboard_impact_bottom_up_v1_component_motherboard_post(verbose, allocation, motherboard)
 Motherboard Impact Bottom Up
 
-# ✔️Motherboard impacts from configuration ### 💡 Smart complete All missing data are retrieve with the closest available values. If no data are available default maximizing data are used  ### 👄 Verbose If set at true, shows the the values used for each attribute*Components have no units since they represent a single instance of a component.* ### 🧮 Measure The impacts values are set by default
+# ✔ ️Motherboard impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Manufacture  The impacts values are set by default🔌 Usage  * ⏺️  Given  ⏬ Allocation
 
 ### Parameters
 
@@ -151,7 +155,8 @@ Motherboard Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**mother_board** | Option<[**MotherBoard**](MotherBoard.md)> |  |  |
+**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |[default to TOTAL]
+**motherboard** | Option<[**Motherboard**](Motherboard.md)> |  |  |
 
 ### Return type
 
@@ -171,10 +176,10 @@ No authorization required
 
 ## power_supply_impact_bottom_up_v1_component_power_supply_post
 
-> serde_json::Value power_supply_impact_bottom_up_v1_component_power_supply_post(verbose, power_supply)
+> serde_json::Value power_supply_impact_bottom_up_v1_component_power_supply_post(verbose, allocation, power_supply)
 Power Supply Impact Bottom Up
 
-# ✔️Power supply impacts from configuration ### 💡 Smart complete All missing data are retrieve with the closest available values. If no data are available default maximizing data are used  ### 👄 Verbose If set at true, shows the the values used for each attribute*Components have no units since they represent a single instance of a component.* ### 🧮 Measure <h3>psu<sub>manuf<sub><em>criteria</em></sub></sub> = psu<sub>unit<sub>weight</sub></sub> x psu<sub>manuf_weight<sub><em>criteria</em></sub></sub></h3> 
+# ✔ ️Power supply impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Manufacture  <h3>psu<sub>manuf<sub><em>criteria</em></sub></sub> = psu<sub>unit<sub>weight</sub></sub> x psu<sub>manuf_weight<sub><em>criteria</em></sub></sub></h3> 🔌 Usage  * ⏺️  Given : shouldn't be used  ⏬ Allocation
 
 ### Parameters
 
@@ -182,6 +187,7 @@ Power Supply Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
+**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |[default to TOTAL]
 **power_supply** | Option<[**PowerSupply**](PowerSupply.md)> |  |  |
 
 ### Return type
@@ -202,10 +208,10 @@ No authorization required
 
 ## ram_impact_bottom_up_v1_component_ram_post
 
-> serde_json::Value ram_impact_bottom_up_v1_component_ram_post(verbose, ram)
+> serde_json::Value ram_impact_bottom_up_v1_component_ram_post(verbose, allocation, ram)
 Ram Impact Bottom Up
 
-# ✔️RAM impacts from configuration ### 💡 Smart complete All missing data are retrieve with the closest available values. If no data are available default maximizing data are used  ### 👄 Verbose If set at true, shows the the values used for each attribute*Components have no units since they represent a single instance of a component.* ### 🧮 Measure <h3>ram<sub>manuf<sub><em>criteria</em></sub></sub> =( ram<sub>size</sub> / ram<sub>density</sub> ) x ram<sub>manuf_die<sub><em>criteria</em></sub></sub> + ram<sub>manuf_base<sub><em>criteria</em></sub></sub> </h3> 
+# ✔️ RAM impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Manufacture  <h3>ram<sub>manuf<sub><em>criteria</em></sub></sub> =( ram<sub>size</sub> / ram<sub>density</sub> ) x ram<sub>manuf_die<sub><em>criteria</em></sub></sub> + ram<sub>manuf_base<sub><em>criteria</em></sub></sub> </h3> 🔌 Usage  * ⏺️  Given  * 📈 Modeled  ⏬ Allocation
 
 ### Parameters
 
@@ -213,6 +219,7 @@ Ram Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
+**allocation** | Option<[**crate::models::Allocation**](.md)> |  |  |[default to TOTAL]
 **ram** | Option<[**Ram**](Ram.md)> |  |  |
 
 ### Return type
