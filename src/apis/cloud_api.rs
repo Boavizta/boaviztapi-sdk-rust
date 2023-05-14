@@ -31,21 +31,6 @@ pub enum InstanceCloudImpactV1CloudPostError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`legacy_instance_cloud_impact_v1_cloud_aws_post`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum LegacyInstanceCloudImpactV1CloudAwsPostError {
-    Status422(crate::models::HttpValidationError),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`legacy_server_get_all_archetype_name_v1_cloud_aws_all_instances_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum LegacyServerGetAllArchetypeNameV1CloudAwsAllInstancesGetError {
-    UnknownValue(serde_json::Value),
-}
-
 /// struct for typed errors of method [`server_get_all_archetype_name_v1_cloud_all_instances_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -62,8 +47,8 @@ pub enum ServerGetAllProviderNameV1CloudAllProvidersGetError {
 }
 
 
-/// # ✔ ️Cloud instance impacts from provider, instance type and usage  Retrieve the impacts of a given Cloud instance and usage.  ### Features  📋 Provider   Name of the cloud provider. You can retrieve the [list here](#/cloud_instance/server_get_all_cloud_providers).  📋 Instance type   Name of the chosen instance. You can retrieve the [list here](#/cloud/server_get_archetype_name_v1_cloud_all_aws_instances_get).  👄 Verbose  🔨 Manufacture  🔌 Usage   * 📈 Modeled  📋 Archetype : The configuration is set by the API, only usage is given by the user  ⏬ Allocation
-pub async fn instance_cloud_impact_v1_cloud_get(configuration: &configuration::Configuration, provider: Option<&str>, instance_type: Option<&str>, verbose: Option<bool>, allocation: Option<crate::models::Allocation>) -> Result<serde_json::Value, Error<InstanceCloudImpactV1CloudGetError>> {
+/// # ✔ ️Cloud instance impacts from provider, instance type and usage  Retrieve the impacts of a given Cloud instance and usage.  ### Features  📋 Provider   Name of the cloud provider. You can retrieve the [list here](#/cloud_instance/server_get_all_cloud_providers).  📋 Instance type   Name of the chosen instance. You can retrieve the [list here](#/cloud/server_get_archetype_name_v1_cloud_all_aws_instances_get).  👄 Verbose  🔨 Embedded  🔌 Usage   * 📈 Modeled  📋 Archetype : The configuration is set by the API, only usage is given by the user  ⏬ Allocation
+pub async fn instance_cloud_impact_v1_cloud_get(configuration: &configuration::Configuration, provider: Option<&str>, instance_type: Option<&str>, verbose: Option<bool>, allocation: Option<crate::models::Allocation>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<InstanceCloudImpactV1CloudGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -82,6 +67,12 @@ pub async fn instance_cloud_impact_v1_cloud_get(configuration: &configuration::C
     }
     if let Some(ref local_var_str) = allocation {
         local_var_req_builder = local_var_req_builder.query(&[("allocation", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = criteria {
+        local_var_req_builder = match "multi" {
+            "multi" => local_var_req_builder.query(&local_var_str.into_iter().map(|p| ("criteria".to_owned(), p.to_string())).collect::<Vec<(std::string::String, std::string::String)>>()),
+            _ => local_var_req_builder.query(&[("criteria", &local_var_str.into_iter().map(|p| p.to_string()).collect::<Vec<String>>().join(",").to_string())]),
+        };
     }
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
@@ -102,8 +93,8 @@ pub async fn instance_cloud_impact_v1_cloud_get(configuration: &configuration::C
     }
 }
 
-/// # ✔ ️Cloud instance impacts from provider, instance type and usage  Retrieve the impacts of a given Cloud instance and usage.  ### Features  📋 Provider   Name of the cloud provider. You can retrieve the [list here](#/cloud_instance/server_get_all_cloud_providers).  📋 Instance type   Name of the chosen instance. You can retrieve the [list here](#/cloud/server_get_archetype_name_v1_cloud_all_aws_instances_get).  👄 Verbose  🔨 Manufacture  🔌 Usage   * 📈 Modeled  📋 Archetype : The configuration is set by the API, only usage is given by the user  ⏬ Allocation
-pub async fn instance_cloud_impact_v1_cloud_post(configuration: &configuration::Configuration, verbose: Option<bool>, allocation: Option<crate::models::Allocation>, cloud: Option<crate::models::Cloud>) -> Result<serde_json::Value, Error<InstanceCloudImpactV1CloudPostError>> {
+/// # ✔ ️Cloud instance impacts from provider, instance type and usage  Retrieve the impacts of a given Cloud instance and usage.  ### Features  📋 Provider   Name of the cloud provider. You can retrieve the [list here](#/cloud_instance/server_get_all_cloud_providers).  📋 Instance type   Name of the chosen instance. You can retrieve the [list here](#/cloud/server_get_archetype_name_v1_cloud_all_aws_instances_get).  👄 Verbose  🔨 Embedded  🔌 Usage   * 📈 Modeled  📋 Archetype : The configuration is set by the API, only usage is given by the user  ⏬ Allocation
+pub async fn instance_cloud_impact_v1_cloud_post(configuration: &configuration::Configuration, verbose: Option<bool>, allocation: Option<crate::models::Allocation>, criteria: Option<Vec<String>>, cloud: Option<crate::models::Cloud>) -> Result<serde_json::Value, Error<InstanceCloudImpactV1CloudPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -116,6 +107,12 @@ pub async fn instance_cloud_impact_v1_cloud_post(configuration: &configuration::
     }
     if let Some(ref local_var_str) = allocation {
         local_var_req_builder = local_var_req_builder.query(&[("allocation", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = criteria {
+        local_var_req_builder = match "multi" {
+            "multi" => local_var_req_builder.query(&local_var_str.into_iter().map(|p| ("criteria".to_owned(), p.to_string())).collect::<Vec<(std::string::String, std::string::String)>>()),
+            _ => local_var_req_builder.query(&[("criteria", &local_var_str.into_iter().map(|p| p.to_string()).collect::<Vec<String>>().join(",").to_string())]),
+        };
     }
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
@@ -132,72 +129,6 @@ pub async fn instance_cloud_impact_v1_cloud_post(configuration: &configuration::
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<InstanceCloudImpactV1CloudPostError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-/// # ✔ (LEGACY) ️AWS instance impacts from instance type and usage  Retrieve the impacts of a given AWS instance and usage.  ### Features  📋 Instance type   AWS name of the chosen instance. You can retrieve the [list here](#/cloud/server_get_all_archetype_name_v1_cloud_all_aws_instances_get).  👄 Verbose  🔨 Manufacture  🔌 Usage   * 📈 Modeled  📋 Archetype : The configuration is set by the API, only usage is given by the user  ⏬ Allocation
-pub async fn legacy_instance_cloud_impact_v1_cloud_aws_post(configuration: &configuration::Configuration, instance_type: Option<&str>, verbose: Option<bool>, allocation: Option<crate::models::Allocation>, usage_cloud: Option<crate::models::UsageCloud>) -> Result<serde_json::Value, Error<LegacyInstanceCloudImpactV1CloudAwsPostError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/cloud/aws", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_str) = instance_type {
-        local_var_req_builder = local_var_req_builder.query(&[("instance_type", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = verbose {
-        local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = allocation {
-        local_var_req_builder = local_var_req_builder.query(&[("allocation", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-    local_var_req_builder = local_var_req_builder.json(&usage_cloud);
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<LegacyInstanceCloudImpactV1CloudAwsPostError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-/// # ✔ (LEGACY)️ Get all the available aws instances 📜 Return the name of all pre-registered aws instances
-pub async fn legacy_server_get_all_archetype_name_v1_cloud_aws_all_instances_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<LegacyServerGetAllArchetypeNameV1CloudAwsAllInstancesGetError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/cloud/aws/all_instances", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<LegacyServerGetAllArchetypeNameV1CloudAwsAllInstancesGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**utils_get_all_countries_v1_utils_country_code_get**](UtilsApi.md#utils_get_all_countries_v1_utils_country_code_get) | **GET** /v1/utils/country_code | Utils Get All Countries
 [**utils_get_all_cpu_family_v1_utils_cpu_family_get**](UtilsApi.md#utils_get_all_cpu_family_v1_utils_cpu_family_get) | **GET** /v1/utils/cpu_family | Utils Get All Cpu Family
 [**utils_get_all_cpu_model_range_v1_utils_cpu_model_range_get**](UtilsApi.md#utils_get_all_cpu_model_range_v1_utils_cpu_model_range_get) | **GET** /v1/utils/cpu_model_range | Utils Get All Cpu Model Range
+[**utils_get_all_cpu_name_v1_utils_cpu_name_get**](UtilsApi.md#utils_get_all_cpu_name_v1_utils_cpu_name_get) | **GET** /v1/utils/cpu_name | Utils Get All Cpu Name
+[**utils_get_all_impacts_criteria_v1_utils_impact_criteria_get**](UtilsApi.md#utils_get_all_impacts_criteria_v1_utils_impact_criteria_get) | **GET** /v1/utils/impact_criteria | Utils Get All Impacts Criteria
 [**utils_get_all_ram_manufacturer_v1_utils_ram_manufacturer_get**](UtilsApi.md#utils_get_all_ram_manufacturer_v1_utils_ram_manufacturer_get) | **GET** /v1/utils/ram_manufacturer | Utils Get All Ram Manufacturer
 [**utils_get_all_ssd_manufacturer_v1_utils_ssd_manufacturer_get**](UtilsApi.md#utils_get_all_ssd_manufacturer_v1_utils_ssd_manufacturer_get) | **GET** /v1/utils/ssd_manufacturer | Utils Get All Ssd Manufacturer
 
@@ -26,7 +28,7 @@ Name To Cpu
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**cpu_name** | Option<**String**> |  |  |
+**cpu_name** | **String** |  | [required] |
 
 ### Return type
 
@@ -131,6 +133,60 @@ No authorization required
 Utils Get All Cpu Model Range
 
 # ✔ ️Get all the available cpu family in the API (*cpu:{model_range:'xeon platinum'}*)
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**serde_json::Value**](serde_json::Value.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## utils_get_all_cpu_name_v1_utils_cpu_name_get
+
+> serde_json::Value utils_get_all_cpu_name_v1_utils_cpu_name_get()
+Utils Get All Cpu Name
+
+# ✔ ️Get all the available cpu name in the API (*cpu:{name:'intel xeon platinum 8175m'}*)
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**serde_json::Value**](serde_json::Value.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## utils_get_all_impacts_criteria_v1_utils_impact_criteria_get
+
+> serde_json::Value utils_get_all_impacts_criteria_v1_utils_impact_criteria_get()
+Utils Get All Impacts Criteria
+
+# ✔ ️Get all the available criteria for the impacts calculation
 
 ### Parameters
 

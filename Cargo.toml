@@ -1,6 +1,6 @@
 [package]
 name = "boavizta_api_sdk"
-version = "0.2.2"
+version = "0.3.0-alpha-openapigenerator"
 description = "A Rust client/sdk to access Boavizta API"
 homepage = "https://boavizta.org"
 repository = "https://github.com/Boavizta/boaviztapi-sdk-rust/"

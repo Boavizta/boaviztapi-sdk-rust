@@ -15,15 +15,15 @@ use crate::apis::ResponseContent;
 use super::{Error, configuration};
 
 
-/// struct for typed errors of method [`welcom_page_get`]
+/// struct for typed errors of method [`welcome_page_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum WelcomPageGetError {
+pub enum WelcomePageGetError {
     UnknownValue(serde_json::Value),
 }
 
 
-pub async fn welcom_page_get(configuration: &configuration::Configuration, ) -> Result<String, Error<WelcomPageGetError>> {
+pub async fn welcome_page_get(configuration: &configuration::Configuration, ) -> Result<String, Error<WelcomePageGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -44,7 +44,7 @@ pub async fn welcom_page_get(configuration: &configuration::Configuration, ) -> 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<WelcomPageGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<WelcomePageGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

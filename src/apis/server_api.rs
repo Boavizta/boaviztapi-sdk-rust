@@ -15,10 +15,10 @@ use crate::apis::ResponseContent;
 use super::{Error, configuration};
 
 
-/// struct for typed errors of method [`server_get_all_archetype_name_v1_server_all_default_models_get`]
+/// struct for typed errors of method [`server_get_all_archetype_name_v1_server_archetypes_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum ServerGetAllArchetypeNameV1ServerAllDefaultModelsGetError {
+pub enum ServerGetAllArchetypeNameV1ServerArchetypesGetError {
     UnknownValue(serde_json::Value),
 }
 
@@ -30,22 +30,22 @@ pub enum ServerImpactFromConfigurationV1ServerPostError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`server_impact_from_model_v1_server_model_get`]
+/// struct for typed errors of method [`server_impact_from_model_v1_server_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum ServerImpactFromModelV1ServerModelGetError {
+pub enum ServerImpactFromModelV1ServerGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
 
-/// # ✔️ Get all the available server models 📜 Return the name of all pre-registered server models
-pub async fn server_get_all_archetype_name_v1_server_all_default_models_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<ServerGetAllArchetypeNameV1ServerAllDefaultModelsGetError>> {
+/// # ✔️ Get all the available server archetype
+pub async fn server_get_all_archetype_name_v1_server_archetypes_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<ServerGetAllArchetypeNameV1ServerArchetypesGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/server/all_default_models", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/server/archetypes", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -61,14 +61,14 @@ pub async fn server_get_all_archetype_name_v1_server_all_default_models_get(conf
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ServerGetAllArchetypeNameV1ServerAllDefaultModelsGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<ServerGetAllArchetypeNameV1ServerArchetypesGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔️ Server impacts from configuration Retrieve the impacts of a given server configuration. ### Features  👄 Verbose  🔃 Auto-complete  🔨 Manufacture  🔌 Usage  * ⏺️  Given  * 📈 Modeled  📋 Archetype  ⏬ Allocation
-pub async fn server_impact_from_configuration_v1_server_post(configuration: &configuration::Configuration, verbose: Option<bool>, allocation: Option<crate::models::Allocation>, server: Option<crate::models::Server>) -> Result<serde_json::Value, Error<ServerImpactFromConfigurationV1ServerPostError>> {
+/// # ✔️ Server impacts from configuration Retrieve the impacts of a given server configuration. ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  🔌 Usage  * ⏺️  Given  * 📈 Modeled  📋 Archetype  ⏬ Allocation
+pub async fn server_impact_from_configuration_v1_server_post(configuration: &configuration::Configuration, verbose: Option<bool>, allocation: Option<crate::models::Allocation>, archetype: Option<&str>, criteria: Option<Vec<String>>, server: Option<crate::models::Server>) -> Result<serde_json::Value, Error<ServerImpactFromConfigurationV1ServerPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -81,6 +81,15 @@ pub async fn server_impact_from_configuration_v1_server_post(configuration: &con
     }
     if let Some(ref local_var_str) = allocation {
         local_var_req_builder = local_var_req_builder.query(&[("allocation", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = archetype {
+        local_var_req_builder = local_var_req_builder.query(&[("archetype", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = criteria {
+        local_var_req_builder = match "multi" {
+            "multi" => local_var_req_builder.query(&local_var_str.into_iter().map(|p| ("criteria".to_owned(), p.to_string())).collect::<Vec<(std::string::String, std::string::String)>>()),
+            _ => local_var_req_builder.query(&[("criteria", &local_var_str.into_iter().map(|p| p.to_string()).collect::<Vec<String>>().join(",").to_string())]),
+        };
     }
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
@@ -102,13 +111,13 @@ pub async fn server_impact_from_configuration_v1_server_post(configuration: &con
     }
 }
 
-/// # ✔ ️Server impacts from model name Retrieve the impacts of a given server name (archetype). ### Features  👄 Verbose  🔃 Auto-complete  🔨 Manufacture  🔌 Usage  📋 Archetype: Uses the [classic server impacts router]with a pre-registered archetype   ⏬ Allocation
-pub async fn server_impact_from_model_v1_server_model_get(configuration: &configuration::Configuration, archetype: Option<&str>, verbose: Option<bool>, allocation: Option<crate::models::Allocation>) -> Result<serde_json::Value, Error<ServerImpactFromModelV1ServerModelGetError>> {
+/// # ✔ ️Server impacts from model name Retrieve the impacts of a given server name (archetype). ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  🔌 Usage  📋 Archetype: Uses the [classic server impacts router]with a pre-registered archetype   ⏬ Allocation
+pub async fn server_impact_from_model_v1_server_get(configuration: &configuration::Configuration, archetype: Option<&str>, verbose: Option<bool>, allocation: Option<crate::models::Allocation>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<ServerImpactFromModelV1ServerGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/server/model", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/server/", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_str) = archetype {
@@ -119,6 +128,12 @@ pub async fn server_impact_from_model_v1_server_model_get(configuration: &config
     }
     if let Some(ref local_var_str) = allocation {
         local_var_req_builder = local_var_req_builder.query(&[("allocation", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = criteria {
+        local_var_req_builder = match "multi" {
+            "multi" => local_var_req_builder.query(&local_var_str.into_iter().map(|p| ("criteria".to_owned(), p.to_string())).collect::<Vec<(std::string::String, std::string::String)>>()),
+            _ => local_var_req_builder.query(&[("criteria", &local_var_str.into_iter().map(|p| p.to_string()).collect::<Vec<String>>().join(",").to_string())]),
+        };
     }
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
@@ -133,7 +148,7 @@ pub async fn server_impact_from_model_v1_server_model_get(configuration: &config
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ServerImpactFromModelV1ServerModelGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<ServerImpactFromModelV1ServerGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

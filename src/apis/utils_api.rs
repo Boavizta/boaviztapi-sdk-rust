@@ -51,6 +51,20 @@ pub enum UtilsGetAllCpuModelRangeV1UtilsCpuModelRangeGetError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`utils_get_all_cpu_name_v1_utils_cpu_name_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum UtilsGetAllCpuNameV1UtilsCpuNameGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`utils_get_all_impacts_criteria_v1_utils_impact_criteria_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum UtilsGetAllImpactsCriteriaV1UtilsImpactCriteriaGetError {
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`utils_get_all_ram_manufacturer_v1_utils_ram_manufacturer_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -67,7 +81,7 @@ pub enum UtilsGetAllSsdManufacturerV1UtilsSsdManufacturerGetError {
 
 
 /// # ✔ ️Complete a cpu attributes from a cpu name
-pub async fn name_to_cpu_v1_utils_name_to_cpu_get(configuration: &configuration::Configuration, cpu_name: Option<&str>) -> Result<serde_json::Value, Error<NameToCpuV1UtilsNameToCpuGetError>> {
+pub async fn name_to_cpu_v1_utils_name_to_cpu_get(configuration: &configuration::Configuration, cpu_name: &str) -> Result<serde_json::Value, Error<NameToCpuV1UtilsNameToCpuGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -75,9 +89,7 @@ pub async fn name_to_cpu_v1_utils_name_to_cpu_get(configuration: &configuration:
     let local_var_uri_str = format!("{}/v1/utils/name_to_cpu", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
-    if let Some(ref local_var_str) = cpu_name {
-        local_var_req_builder = local_var_req_builder.query(&[("cpu_name", &local_var_str.to_string())]);
-    }
+    local_var_req_builder = local_var_req_builder.query(&[("cpu_name", &cpu_name.to_string())]);
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
@@ -204,6 +216,62 @@ pub async fn utils_get_all_cpu_model_range_v1_utils_cpu_model_range_get(configur
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<UtilsGetAllCpuModelRangeV1UtilsCpuModelRangeGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// # ✔ ️Get all the available cpu name in the API (*cpu:{name:'intel xeon platinum 8175m'}*)
+pub async fn utils_get_all_cpu_name_v1_utils_cpu_name_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<UtilsGetAllCpuNameV1UtilsCpuNameGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/utils/cpu_name", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<UtilsGetAllCpuNameV1UtilsCpuNameGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// # ✔ ️Get all the available criteria for the impacts calculation
+pub async fn utils_get_all_impacts_criteria_v1_utils_impact_criteria_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<UtilsGetAllImpactsCriteriaV1UtilsImpactCriteriaGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/utils/impact_criteria", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<UtilsGetAllImpactsCriteriaV1UtilsImpactCriteriaGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

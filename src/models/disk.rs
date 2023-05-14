@@ -28,6 +28,8 @@ pub struct Disk {
     pub manufacturer: Option<String>,
     #[serde(rename = "model", skip_serializing_if = "Option::is_none")]
     pub model: Option<String>,
+    #[serde(rename = "layers", skip_serializing_if = "Option::is_none")]
+    pub layers: Option<i32>,
 }
 
 impl Disk {
@@ -41,6 +43,7 @@ impl Disk {
             density: None,
             manufacturer: None,
             model: None,
+            layers: None,
         }
     }
 }

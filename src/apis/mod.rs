@@ -95,6 +95,7 @@ pub mod component_api;
 pub mod consumption_profile_api;
 pub mod default_api;
 pub mod server_api;
+pub mod user_terminal_api;
 pub mod utils_api;
 
 pub mod configuration;
