@@ -15,7 +15,7 @@
 #[derive(Clone, Debug, PartialEq, Default, Serialize, Deserialize)]
 pub struct Box {
     #[serde(rename = "usage", skip_serializing_if = "Option::is_none")]
-    pub usage: Option<Box<crate::models::Usage>>,
+    pub usage: Option<crate::models::Usage>,
 }
 
 impl Box {
