@@ -2,6 +2,11 @@
 
 Rust client library for [Boaviztapi](https://github.com/Boavizta/boaviztapi).
 
+## Versions supported
+
+- SDK version 0.3.X supports Boavizata API of the 0.3.x series
+- SDK version 0.2.x support Boavizta API of the 0.2.x series (Neither SDK nor API will not be updated after release of Boavizta API v0.3.x - around June 2023)
+
 ## Documentation
 
 - SDK documentation (crate) [boavizta_api_sdk - Rust](https://docs.rs/boavizta_api_sdk/latest/boavizta_api_sdk/)
@@ -53,18 +58,3 @@ default-features = false
 features = ["json", "multipart", "rustls-tls"]
 ```
 
-#### Update generated code
-
-Use `cargo clippy` or `cargo check` to check that the generated code compiles.
-
-⚠ The following (useful when generating for API v0.1.2) does not seem necessary anymore with API v0.2.x series).
-
-```sh
-# Only use the following command on generated code for v0.1.x API
-echo "⚠ Rename the field \`type`` into \`usage_type\` to comply with Rust naming conventions"
-echo "⚠ This is really a hacky workaround that we should remove when the code generation is fixed" 
-sed -i "s/pub type: Option<String>,/pub usage_type: Option<String>,/" src/models/usage_cloud.rs
-sed -i "s/type: None,/usage_type: None,/" src/models/usage_cloud.rs
-sed -i "s/pub type: Option<String>,/pub usage_type: Option<String>,/" src/models/usage_server.rs
-sed -i "s/type: None,/usage_type: None,/" src/models/usage_server.rs
-```
