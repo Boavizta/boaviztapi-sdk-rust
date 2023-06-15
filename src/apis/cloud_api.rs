@@ -1,9 +1,9 @@
 /*
  * BOAVIZTAPI - DEMO
  *
- * <p>🎯 Retrieving the impacts of digital elements.</p> <p>This is a quick demo, to see full documentation <a href=\"https://doc.api.boavizta.org\">click here</a></p> <h2>Features</h2> <p>Bellow a list of all available features. Implemented features are specified in each route.</p> <h3>👄 Verbose</h3> <p>Verbose is an HTTP parameter. If set at true :</p> <ul> <li>Shows the impacts of each component</li> <li>Shows the value used for each attributes</li> </ul> <p><em>\"attribute\": {\"value\": \"value\", \"unit\": \"unit\", \"status\": \"Status\", \"source\": \"Source\"}</em></p> <h3>🔨 Manufacture</h3> <ul> <li>Manufacture impacts of devices are the sum of the impacts of its components</li> <li>Manufacture impacts equations of components are given for each component</li> </ul> <h3>🔌  Usage</h3> <p>Usage impacts are measured by multiplying :</p> <ul> <li> <p>a <strong>duration</strong></p> </li> <li> <p>an <strong>impact factor</strong> </p> </li> <li> <p>an <strong>electrical consumption</strong> </p> </li> </ul> <h4>⏲ Duration</h4> <p>Usage impacts are given for a specific time duration. Duration can be given in :</p> <ul> <li>HOURS : <em>usage:{hours_use_time: 1}</em></li> <li>DAYS : <em>usage:{days_use_time: 1}</em></li> <li>YEARS : <em>usage:{years_use_time: 1}</em> </li> </ul> <p>If no duration is given, <strong>the impact is measured for a year</strong>.</p> <p><em>Note</em> : units are cumulative</p> <h4>✖️ Impact factors</h4> <ul> <li>Impact factors can be given : <em>usage:{[criterion]_factors: 0.38}</em></li> <li>Impact factors can be retrieved from : <em>usage:{usage_location: \"FRA\"}</em>. </li> </ul> <p><em>See the list of locations : <a href=\"/v1/utils/country_code\">/v1/utils/country_code</a></em></p> <h4>⚡ Electrical consumption</h4> <h5>⏺️ Given</h5> <ul> <li>Electrical consumption can be given for one hour (average) <em>usage:{hours_electrical_consumption: 1}</em>.</li> </ul> <h5>📈 Modeled</h5> <ul> <li>Electrical consumption can be retrieved from consumption profile using <em>usage:{time_workload: 50}</em>. </li> </ul> <h3>🔃 Auto-complete</h3> <p>The API will complete the missing attributes in a request. Components have different completion strategies. Devices have minimal required components. If not given in the request a component with default characteristics is used.</p> <h3>📋 Archetype</h3> <p>If an archetype is given, the missing attributes will be complete with the archetypes attributes instead of default attributes</p> <h3>⏬ Allocation</h3> <p>Allocation is an HTTP parameter. </p> <ul> <li>If set at TOTAL, the total manufacture impact is returned.</li> <li>If set at LINEAR the manufacture impact is allocated linearly hover a specific lifespan given or set by default : <em>{\"usage\":{\"years_life_time\":1}}</em></li> </ul>
+ * <p>🎯 Retrieving the impacts of digital elements.</p> <p>This is a quick demo, to see full documentation <a href=\"https://doc.api.boavizta.org\">click here</a></p> <h2>Features</h2> <p>Bellow a list of all available features.</p> <h3>👄 Verbose</h3> <p>Verbose is an HTTP parameter. If set at true :</p> <ul> <li>Shows the impacts of each component</li> <li>Shows the value used for each attribute</li> </ul> <p><em>\"attribute\": {\"value\": \"value\", \"unit\": \"unit\", \"status\": \"Status\", \"source\": \"Source\", \"min\":\"min\", \"max\":\"max\", \"significant_figures\":\"significant_figures\"}</em></p> <h3>🔨 Embedded</h3> <ul> <li>Embedded impacts are the impacts occurring during raw material extraction, manufacture, distribution and end of life</li> <li>When end of life is not taken into account, we specified it in the <code>warnings</code></li> </ul> <h3>🔌  Usage</h3> <p>Usage impacts are assessed by multiplying :</p> <ul> <li> <p>a <strong>duration</strong></p> </li> <li> <p>an <strong>impact factor</strong> </p> </li> <li> <p>an <strong>electrical consumption</strong> </p> </li> </ul> <h4>⏲ Duration</h4> <p>Usage impacts can be given as a router parameter, in hours.</p> <p>If no duration is given, <strong>the impact is assess for the all life duration of the asset</strong>.</p> <h4>✖️ Impact factors</h4> <ul> <li>Impact factors can be given : <em>\"usage\":{\"elec_factors\":{[criterion]_factors: 0.38}}</em></li> <li> <p>Impact factors can be retrieved from : <em>\"usage\":{\"usage_location\": \"FRA\"}</em>. </p> </li> <li> <p>See the list of locations : <a href=\"/v1/utils/country_code\">/v1/utils/country_code</a>*</p> </li> </ul> <h4>⚡ Electrical consumption</h4> <h5>⏺️ Given</h5> <ul> <li>Electrical consumption can be given for one hour (average) <em>\"usage\":{\"avg_power\": 1}</em>.</li> </ul> <h5>📈 Modeled</h5> <ul> <li>Electrical consumption can be retrieved from consumption profile using <em>usage:{time_workload: 50}</em>.</li> </ul> <h5>📋 Archetype</h5> <ul> <li>In some cases, default electrical consumption can be taken from the archetype</li> </ul> <h3>🔃 Auto-complete &amp; 📋 Archetype</h3> <p>The API will complete the missing attributes in a request with a completion function or with values taken from the <code>archetype</code> specified in the route parameter.</p> <h3>⏬ Allocation</h3> <ul> <li>Usage impacts are assessed on the duration given in route parameter</li> <li>Embedded impacts are allocated linearly on the duration given in parameter <code>embedded_impact = impact * (duration/life_duration)</code></li> </ul> <p>If no duration is given, the life_duration (<code>`hours_life_time</code>) of the asset is used.</p>
  *
- * The version of the OpenAPI document: 0.2.2
+ * The version of the OpenAPI document: 1.0.0a3
  * 
  * Generated by: https://openapi-generator.tech
  */
@@ -15,45 +15,87 @@ use crate::apis::ResponseContent;
 use super::{Error, configuration};
 
 
-/// struct for typed errors of method [`instance_cloud_impact_v1_cloud_get`]
+/// struct for typed errors of method [`get_archetype_config_v1_cloud_instance_instance_config_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum InstanceCloudImpactV1CloudGetError {
+pub enum GetArchetypeConfigV1CloudInstanceInstanceConfigGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`instance_cloud_impact_v1_cloud_post`]
+/// struct for typed errors of method [`instance_cloud_impact_v1_cloud_instance_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum InstanceCloudImpactV1CloudPostError {
+pub enum InstanceCloudImpactV1CloudInstanceGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`server_get_all_archetype_name_v1_cloud_all_instances_get`]
+/// struct for typed errors of method [`instance_cloud_impact_v1_cloud_instance_post`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum ServerGetAllArchetypeNameV1CloudAllInstancesGetError {
+pub enum InstanceCloudImpactV1CloudInstancePostError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`server_get_all_provider_name_v1_cloud_all_providers_get`]
+/// struct for typed errors of method [`server_get_all_archetype_name_v1_cloud_instance_all_instances_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum ServerGetAllProviderNameV1CloudAllProvidersGetError {
+pub enum ServerGetAllArchetypeNameV1CloudInstanceAllInstancesGetError {
+    Status422(crate::models::HttpValidationError),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`server_get_all_provider_name_v1_cloud_instance_all_providers_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ServerGetAllProviderNameV1CloudInstanceAllProvidersGetError {
     UnknownValue(serde_json::Value),
 }
 
 
-/// # ✔ ️Cloud instance impacts from provider, instance type and usage  Retrieve the impacts of a given Cloud instance and usage.  ### Features  📋 Provider   Name of the cloud provider. You can retrieve the [list here](#/cloud_instance/server_get_all_cloud_providers).  📋 Instance type   Name of the chosen instance. You can retrieve the [list here](#/cloud/server_get_archetype_name_v1_cloud_all_aws_instances_get).  👄 Verbose  🔨 Embedded  🔌 Usage   * 📈 Modeled  📋 Archetype : The configuration is set by the API, only usage is given by the user  ⏬ Allocation
-pub async fn instance_cloud_impact_v1_cloud_get(configuration: &configuration::Configuration, provider: Option<&str>, instance_type: Option<&str>, verbose: Option<bool>, allocation: Option<crate::models::Allocation>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<InstanceCloudImpactV1CloudGetError>> {
+/// # ✔️ Get the configuration of a given instance
+pub async fn get_archetype_config_v1_cloud_instance_instance_config_get(configuration: &configuration::Configuration, provider: Option<&str>, instance_type: Option<&str>) -> Result<serde_json::Value, Error<GetArchetypeConfigV1CloudInstanceInstanceConfigGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/cloud/", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/cloud/instance/instance_config", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = provider {
+        local_var_req_builder = local_var_req_builder.query(&[("provider", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = instance_type {
+        local_var_req_builder = local_var_req_builder.query(&[("instance_type", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<GetArchetypeConfigV1CloudInstanceInstanceConfigGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// # ✔ ️Cloud instance impacts from provider, instance type and usage  Retrieve the impacts of a given Cloud instance and usage.  ### Features  📋 Provider   Name of the cloud provider. You can retrieve the [list here](#/cloud_instance/server_get_all_cloud_providers).  📋 Instance type   Name of the chosen instance. You can retrieve the [list here](#/cloud/server_get_archetype_name_v1_cloud_all_aws_instances_get).  👄 Verbose  🔨 Embedded  🔌 Usage   * 📈 Modeled  📋 Archetype : The configuration is set by the API, only usage is given by the user  ⏬ Allocation
+pub async fn instance_cloud_impact_v1_cloud_instance_get(configuration: &configuration::Configuration, provider: Option<&str>, instance_type: Option<&str>, verbose: Option<bool>, duration: Option<f32>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<InstanceCloudImpactV1CloudInstanceGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/cloud/instance", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_str) = provider {
@@ -65,8 +107,8 @@ pub async fn instance_cloud_impact_v1_cloud_get(configuration: &configuration::C
     if let Some(ref local_var_str) = verbose {
         local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
     }
-    if let Some(ref local_var_str) = allocation {
-        local_var_req_builder = local_var_req_builder.query(&[("allocation", &local_var_str.to_string())]);
+    if let Some(ref local_var_str) = duration {
+        local_var_req_builder = local_var_req_builder.query(&[("duration", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = criteria {
         local_var_req_builder = match "multi" {
@@ -87,26 +129,26 @@ pub async fn instance_cloud_impact_v1_cloud_get(configuration: &configuration::C
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<InstanceCloudImpactV1CloudGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<InstanceCloudImpactV1CloudInstanceGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// # ✔ ️Cloud instance impacts from provider, instance type and usage  Retrieve the impacts of a given Cloud instance and usage.  ### Features  📋 Provider   Name of the cloud provider. You can retrieve the [list here](#/cloud_instance/server_get_all_cloud_providers).  📋 Instance type   Name of the chosen instance. You can retrieve the [list here](#/cloud/server_get_archetype_name_v1_cloud_all_aws_instances_get).  👄 Verbose  🔨 Embedded  🔌 Usage   * 📈 Modeled  📋 Archetype : The configuration is set by the API, only usage is given by the user  ⏬ Allocation
-pub async fn instance_cloud_impact_v1_cloud_post(configuration: &configuration::Configuration, verbose: Option<bool>, allocation: Option<crate::models::Allocation>, criteria: Option<Vec<String>>, cloud: Option<crate::models::Cloud>) -> Result<serde_json::Value, Error<InstanceCloudImpactV1CloudPostError>> {
+pub async fn instance_cloud_impact_v1_cloud_instance_post(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, criteria: Option<Vec<String>>, cloud: Option<crate::models::Cloud>) -> Result<serde_json::Value, Error<InstanceCloudImpactV1CloudInstancePostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/cloud/", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/cloud/instance", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
 
     if let Some(ref local_var_str) = verbose {
         local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
     }
-    if let Some(ref local_var_str) = allocation {
-        local_var_req_builder = local_var_req_builder.query(&[("allocation", &local_var_str.to_string())]);
+    if let Some(ref local_var_str) = duration {
+        local_var_req_builder = local_var_req_builder.query(&[("duration", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = criteria {
         local_var_req_builder = match "multi" {
@@ -128,19 +170,19 @@ pub async fn instance_cloud_impact_v1_cloud_post(configuration: &configuration::
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<InstanceCloudImpactV1CloudPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<InstanceCloudImpactV1CloudInstancePostError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// # ✔ ️Get all the available instances for a given Cloud provider 📜 Return the name of all pre-registered instances for the Cloud provider
-pub async fn server_get_all_archetype_name_v1_cloud_all_instances_get(configuration: &configuration::Configuration, provider: Option<&str>) -> Result<serde_json::Value, Error<ServerGetAllArchetypeNameV1CloudAllInstancesGetError>> {
+pub async fn server_get_all_archetype_name_v1_cloud_instance_all_instances_get(configuration: &configuration::Configuration, provider: Option<&str>) -> Result<serde_json::Value, Error<ServerGetAllArchetypeNameV1CloudInstanceAllInstancesGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/cloud/all_instances", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/cloud/instance/all_instances", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_str) = provider {
@@ -159,19 +201,19 @@ pub async fn server_get_all_archetype_name_v1_cloud_all_instances_get(configurat
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ServerGetAllArchetypeNameV1CloudAllInstancesGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<ServerGetAllArchetypeNameV1CloudInstanceAllInstancesGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
 /// # ✔ ️Get all the available Cloud providers 📜 Return the names of all pre-registered Cloud providers
-pub async fn server_get_all_provider_name_v1_cloud_all_providers_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<ServerGetAllProviderNameV1CloudAllProvidersGetError>> {
+pub async fn server_get_all_provider_name_v1_cloud_instance_all_providers_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<ServerGetAllProviderNameV1CloudInstanceAllProvidersGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/cloud/all_providers", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/cloud/instance/all_providers", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -187,7 +229,7 @@ pub async fn server_get_all_provider_name_v1_cloud_all_providers_get(configurati
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<ServerGetAllProviderNameV1CloudAllProvidersGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<ServerGetAllProviderNameV1CloudInstanceAllProvidersGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

@@ -1,5 +1,3 @@
-pub mod allocation;
-pub use self::allocation::Allocation;
 pub mod model_box;
 pub use self::model_box::Box;
 pub mod case;
@@ -16,6 +14,8 @@ pub mod desktop;
 pub use self::desktop::Desktop;
 pub mod disk;
 pub use self::disk::Disk;
+pub mod elec_factors;
+pub use self::elec_factors::ElecFactors;
 pub mod external_hdd;
 pub use self::external_hdd::ExternalHdd;
 pub mod external_ssd;

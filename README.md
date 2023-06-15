@@ -19,7 +19,10 @@ SDK is generated from the published openAPI specification of Boaviztapi (<http:/
 We use openapi-generator-cli to generate the SDK. See [GitHub - OpenAPITools/openapi-generator-cli: A node package wrapper for https://github.com/OpenAPITools/openapi-generator](https://github.com/OpenAPITools/openapi-generator-cli) .
 
 ```sh
+# Generate for public API
 docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate -i http://api.boavizta.org/openapi.json   -g rust  -o /local/ --package-name boavizta_api_sdk
+# Local API (dev, using network host /!\)
+docker run --network=host --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate -i http://localhost:5000/openapi.json  -g rust  -o /local/ --package-name boavizta_api_sdk
 ```
 
 The generated code require some manual updates before being usable.

@@ -1,7 +1,6 @@
 .gitignore
 .travis.yml
 Cargo.toml
-docs/Allocation.md
 docs/Box.md
 docs/Case.md
 docs/Cloud.md
@@ -14,6 +13,7 @@ docs/Cpu.md
 docs/DefaultApi.md
 docs/Desktop.md
 docs/Disk.md
+docs/ElecFactors.md
 docs/ExternalHdd.md
 docs/ExternalSsd.md
 docs/HttpValidationError.md
@@ -22,6 +22,7 @@ docs/LocationInner.md
 docs/ModelServer.md
 docs/Monitor.md
 docs/Motherboard.md
+docs/PeripheralApi.md
 docs/PowerSupply.md
 docs/Ram.md
 docs/Server.md
@@ -29,13 +30,13 @@ docs/ServerApi.md
 docs/Smartphone.md
 docs/Tablet.md
 docs/Television.md
+docs/TerminalApi.md
 docs/TimeWorkload.md
 docs/Usage.md
 docs/Usage1.md
 docs/UsageCloud.md
 docs/UsageServer.md
 docs/UsbStick.md
-docs/UserTerminalApi.md
 docs/UtilsApi.md
 docs/ValidationError.md
 docs/WorkloadPower.md
@@ -47,11 +48,11 @@ src/apis/configuration.rs
 src/apis/consumption_profile_api.rs
 src/apis/default_api.rs
 src/apis/mod.rs
+src/apis/peripheral_api.rs
 src/apis/server_api.rs
-src/apis/user_terminal_api.rs
+src/apis/terminal_api.rs
 src/apis/utils_api.rs
 src/lib.rs
-src/models/allocation.rs
 src/models/case.rs
 src/models/cloud.rs
 src/models/configuration_server.rs
@@ -59,6 +60,7 @@ src/models/consumption_profile_cpu.rs
 src/models/cpu.rs
 src/models/desktop.rs
 src/models/disk.rs
+src/models/elec_factors.rs
 src/models/external_hdd.rs
 src/models/external_ssd.rs
 src/models/http_validation_error.rs

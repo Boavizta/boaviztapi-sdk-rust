@@ -15,238 +15,207 @@ use crate::apis::ResponseContent;
 use super::{Error, configuration};
 
 
-/// struct for typed errors of method [`case_all_archetype_name_v1_component_case_archetype_get`]
+/// struct for typed errors of method [`box_get_all_archetype_name_v1_terminal_box_archetypes_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum CaseAllArchetypeNameV1ComponentCaseArchetypeGetError {
+pub enum BoxGetAllArchetypeNameV1TerminalBoxArchetypesGetError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`case_archetype_config_v1_component_case_archetype_config_get`]
+/// struct for typed errors of method [`box_get_archetype_config_v1_terminal_box_archetype_config_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum CaseArchetypeConfigV1ComponentCaseArchetypeConfigGetError {
+pub enum BoxGetArchetypeConfigV1TerminalBoxArchetypeConfigGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`case_impact_bottom_up_v1_component_case_get`]
+/// struct for typed errors of method [`box_impact_v1_terminal_box_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum CaseImpactBottomUpV1ComponentCaseGetError {
+pub enum BoxImpactV1TerminalBoxGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`case_impact_bottom_up_v1_component_case_post`]
+/// struct for typed errors of method [`box_impact_v1_terminal_box_post`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum CaseImpactBottomUpV1ComponentCasePostError {
+pub enum BoxImpactV1TerminalBoxPostError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`cpu_all_archetype_name_v1_component_all_get`]
+/// struct for typed errors of method [`desktop_get_all_archetype_name_v1_terminal_desktop_archetypes_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum CpuAllArchetypeNameV1ComponentAllGetError {
+pub enum DesktopGetAllArchetypeNameV1TerminalDesktopArchetypesGetError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`cpu_all_archetype_name_v1_component_cpu_archetype_get`]
+/// struct for typed errors of method [`desktop_get_archetype_config_v1_terminal_desktop_archetype_config_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum CpuAllArchetypeNameV1ComponentCpuArchetypeGetError {
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`cpu_archetype_config_v1_component_cpu_archetype_config_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CpuArchetypeConfigV1ComponentCpuArchetypeConfigGetError {
+pub enum DesktopGetArchetypeConfigV1TerminalDesktopArchetypeConfigGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`cpu_impact_bottom_up_v1_component_cpu_get`]
+/// struct for typed errors of method [`desktop_impact_v1_terminal_desktop_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum CpuImpactBottomUpV1ComponentCpuGetError {
+pub enum DesktopImpactV1TerminalDesktopGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`cpu_impact_bottom_up_v1_component_cpu_post`]
+/// struct for typed errors of method [`desktop_impact_v1_terminal_desktop_post`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum CpuImpactBottomUpV1ComponentCpuPostError {
+pub enum DesktopImpactV1TerminalDesktopPostError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`disk_impact_bottom_up_v1_component_hdd_get`]
+/// struct for typed errors of method [`laptop_get_all_archetype_name_v1_terminal_laptop_archetypes_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum DiskImpactBottomUpV1ComponentHddGetError {
+pub enum LaptopGetAllArchetypeNameV1TerminalLaptopArchetypesGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`laptop_get_archetype_config_v1_terminal_laptop_archetype_config_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum LaptopGetArchetypeConfigV1TerminalLaptopArchetypeConfigGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`disk_impact_bottom_up_v1_component_hdd_post`]
+/// struct for typed errors of method [`laptop_impact_v1_terminal_laptop_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum DiskImpactBottomUpV1ComponentHddPostError {
+pub enum LaptopImpactV1TerminalLaptopGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`disk_impact_bottom_up_v1_component_ssd_get`]
+/// struct for typed errors of method [`laptop_impact_v1_terminal_laptop_post`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum DiskImpactBottomUpV1ComponentSsdGetError {
+pub enum LaptopImpactV1TerminalLaptopPostError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`disk_impact_bottom_up_v1_component_ssd_post`]
+/// struct for typed errors of method [`smartphone_get_all_archetype_name_v1_terminal_smartphone_archetypes_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum DiskImpactBottomUpV1ComponentSsdPostError {
+pub enum SmartphoneGetAllArchetypeNameV1TerminalSmartphoneArchetypesGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`smartphone_get_archetype_config_v1_terminal_smartphone_archetype_config_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum SmartphoneGetArchetypeConfigV1TerminalSmartphoneArchetypeConfigGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`hdd_all_archetype_name_v1_component_hdd_archetype_get`]
+/// struct for typed errors of method [`smartphone_impact_v1_terminal_smartphone_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum HddAllArchetypeNameV1ComponentHddArchetypeGetError {
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`hdd_archetype_config_v1_component_hdd_archetype_config_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum HddArchetypeConfigV1ComponentHddArchetypeConfigGetError {
+pub enum SmartphoneImpactV1TerminalSmartphoneGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`motherboard_all_archetype_name_v1_component_motherboard_archetype_get`]
+/// struct for typed errors of method [`smartphone_impact_v1_terminal_smartphone_post`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum MotherboardAllArchetypeNameV1ComponentMotherboardArchetypeGetError {
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`motherboard_archetype_config_v1_component_motherboard_archetype_config_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum MotherboardArchetypeConfigV1ComponentMotherboardArchetypeConfigGetError {
+pub enum SmartphoneImpactV1TerminalSmartphonePostError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`motherboard_impact_bottom_up_v1_component_motherboard_get`]
+/// struct for typed errors of method [`tablet_get_all_archetype_name_v1_terminal_tablet_archetypes_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum MotherboardImpactBottomUpV1ComponentMotherboardGetError {
+pub enum TabletGetAllArchetypeNameV1TerminalTabletArchetypesGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`tablet_get_archetype_config_v1_terminal_tablet_archetype_config_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum TabletGetArchetypeConfigV1TerminalTabletArchetypeConfigGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`motherboard_impact_bottom_up_v1_component_motherboard_post`]
+/// struct for typed errors of method [`tablet_impact_v1_terminal_tablet_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum MotherboardImpactBottomUpV1ComponentMotherboardPostError {
+pub enum TabletImpactV1TerminalTabletGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`power_supply_all_archetype_name_v1_component_power_supply_archetype_get`]
+/// struct for typed errors of method [`tablet_impact_v1_terminal_tablet_post`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum PowerSupplyAllArchetypeNameV1ComponentPowerSupplyArchetypeGetError {
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`power_supply_archetype_config_v1_component_power_supply_archetype_config_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum PowerSupplyArchetypeConfigV1ComponentPowerSupplyArchetypeConfigGetError {
+pub enum TabletImpactV1TerminalTabletPostError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`power_supply_impact_bottom_up_v1_component_power_supply_get`]
+/// struct for typed errors of method [`television_get_all_archetype_name_v1_terminal_television_archetypes_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum PowerSupplyImpactBottomUpV1ComponentPowerSupplyGetError {
+pub enum TelevisionGetAllArchetypeNameV1TerminalTelevisionArchetypesGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`television_get_archetype_config_v1_terminal_television_archetype_config_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum TelevisionGetArchetypeConfigV1TerminalTelevisionArchetypeConfigGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`power_supply_impact_bottom_up_v1_component_power_supply_post`]
+/// struct for typed errors of method [`television_impact_v1_terminal_television_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum PowerSupplyImpactBottomUpV1ComponentPowerSupplyPostError {
+pub enum TelevisionImpactV1TerminalTelevisionGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`ram_all_archetype_name_v1_component_ram_archetype_get`]
+/// struct for typed errors of method [`television_impact_v1_terminal_television_post`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum RamAllArchetypeNameV1ComponentRamArchetypeGetError {
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`ram_archetype_config_v1_component_ram_archetype_config_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum RamArchetypeConfigV1ComponentRamArchetypeConfigGetError {
+pub enum TelevisionImpactV1TerminalTelevisionPostError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`ram_impact_bottom_up_v1_component_ram_get`]
+/// struct for typed errors of method [`terminal_get_all_categories_v1_terminal_all_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum RamImpactBottomUpV1ComponentRamGetError {
-    Status422(crate::models::HttpValidationError),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`ram_impact_bottom_up_v1_component_ram_post`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum RamImpactBottomUpV1ComponentRamPostError {
-    Status422(crate::models::HttpValidationError),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`ssd_all_archetype_name_v1_component_ssd_archetype_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum SsdAllArchetypeNameV1ComponentSsdArchetypeGetError {
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`ssd_archetype_config_v1_component_ssd_archetype_config_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum SsdArchetypeConfigV1ComponentSsdArchetypeConfigGetError {
-    Status422(crate::models::HttpValidationError),
+pub enum TerminalGetAllCategoriesV1TerminalAllGetError {
     UnknownValue(serde_json::Value),
 }
 
 
-/// # ✔ ️Case impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  🔌 Usage  * ⏺️  Given : when the enclosure consumes energy   ⏬ Allocation
-pub async fn case_all_archetype_name_v1_component_case_archetype_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<CaseAllArchetypeNameV1ComponentCaseArchetypeGetError>> {
+/// # ✔️ Get all the available user terminal archetype for a given user terminal name
+pub async fn box_get_all_archetype_name_v1_terminal_box_archetypes_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<BoxGetAllArchetypeNameV1TerminalBoxArchetypesGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/case/archetype", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/box/archetypes", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -262,19 +231,19 @@ pub async fn case_all_archetype_name_v1_component_case_archetype_get(configurati
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CaseAllArchetypeNameV1ComponentCaseArchetypeGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<BoxGetAllArchetypeNameV1TerminalBoxArchetypesGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️Case impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  🔌 Usage  * ⏺️  Given : when the enclosure consumes energy   ⏬ Allocation
-pub async fn case_archetype_config_v1_component_case_archetype_config_get(configuration: &configuration::Configuration, archetype: &str) -> Result<serde_json::Value, Error<CaseArchetypeConfigV1ComponentCaseArchetypeConfigGetError>> {
+/// # ✔️ Get the configuration of a given archetype
+pub async fn box_get_archetype_config_v1_terminal_box_archetype_config_get(configuration: &configuration::Configuration, archetype: &str) -> Result<serde_json::Value, Error<BoxGetArchetypeConfigV1TerminalBoxArchetypeConfigGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/case/archetype_config", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/box/archetype_config", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     local_var_req_builder = local_var_req_builder.query(&[("archetype", &archetype.to_string())]);
@@ -291,29 +260,29 @@ pub async fn case_archetype_config_v1_component_case_archetype_config_get(config
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CaseArchetypeConfigV1ComponentCaseArchetypeConfigGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<BoxGetArchetypeConfigV1TerminalBoxArchetypeConfigGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️Case impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  🔌 Usage  * ⏺️  Given : when the enclosure consumes energy   ⏬ Allocation
-pub async fn case_impact_bottom_up_v1_component_case_get(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<CaseImpactBottomUpV1ComponentCaseGetError>> {
+/// # ✔ Terminal impacts ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are fix🔌 Usage  * ⏺️  Given  * 📋 Archetype  ⏬ Allocation
+pub async fn box_impact_v1_terminal_box_get(configuration: &configuration::Configuration, archetype: Option<&str>, verbose: Option<bool>, duration: Option<f32>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<BoxImpactV1TerminalBoxGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/case", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/box", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
+    if let Some(ref local_var_str) = archetype {
+        local_var_req_builder = local_var_req_builder.query(&[("archetype", &local_var_str.to_string())]);
+    }
     if let Some(ref local_var_str) = verbose {
         local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = duration {
         local_var_req_builder = local_var_req_builder.query(&[("duration", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = archetype {
-        local_var_req_builder = local_var_req_builder.query(&[("archetype", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = criteria {
         local_var_req_builder = match "multi" {
@@ -334,19 +303,19 @@ pub async fn case_impact_bottom_up_v1_component_case_get(configuration: &configu
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CaseImpactBottomUpV1ComponentCaseGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<BoxImpactV1TerminalBoxGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️Case impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  🔌 Usage  * ⏺️  Given : when the enclosure consumes energy   ⏬ Allocation
-pub async fn case_impact_bottom_up_v1_component_case_post(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>, case: Option<crate::models::Case>) -> Result<serde_json::Value, Error<CaseImpactBottomUpV1ComponentCasePostError>> {
+/// # ✔ Terminal impacts ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are fix🔌 Usage  * ⏺️  Given  * 📋 Archetype  ⏬ Allocation
+pub async fn box_impact_v1_terminal_box_post(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>, r#box: Option<crate::models::Box>) -> Result<serde_json::Value, Error<BoxImpactV1TerminalBoxPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/case", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/box", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
 
     if let Some(ref local_var_str) = verbose {
@@ -367,7 +336,7 @@ pub async fn case_impact_bottom_up_v1_component_case_post(configuration: &config
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    local_var_req_builder = local_var_req_builder.json(&case);
+    local_var_req_builder = local_var_req_builder.json(&r#box);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -378,19 +347,19 @@ pub async fn case_impact_bottom_up_v1_component_case_post(configuration: &config
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CaseImpactBottomUpV1ComponentCasePostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<BoxImpactV1TerminalBoxPostError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️CPU impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>cpu<sub>manuf<sub><em>criteria</em></sub></sub> = ( cpu<sub>core<sub>units</sub></sub> x cpu<sub>diesize</sub> + 0,491 ) x cpu<sub>manuf_die<sub><em>criteria</em></sub></sub> + cpu<sub>manuf_base<sub><em>criteria</em></sub></sub></h3> 🔌 Usage  * ⏺️  Given  * 📈 Modeled  ⏬ Allocation
-pub async fn cpu_all_archetype_name_v1_component_all_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<CpuAllArchetypeNameV1ComponentAllGetError>> {
+/// # ✔️ Get all the available user terminal archetype for a given user terminal name
+pub async fn desktop_get_all_archetype_name_v1_terminal_desktop_archetypes_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<DesktopGetAllArchetypeNameV1TerminalDesktopArchetypesGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/all", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/desktop/archetypes", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -406,47 +375,19 @@ pub async fn cpu_all_archetype_name_v1_component_all_get(configuration: &configu
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CpuAllArchetypeNameV1ComponentAllGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<DesktopGetAllArchetypeNameV1TerminalDesktopArchetypesGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️CPU impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>cpu<sub>manuf<sub><em>criteria</em></sub></sub> = ( cpu<sub>core<sub>units</sub></sub> x cpu<sub>diesize</sub> + 0,491 ) x cpu<sub>manuf_die<sub><em>criteria</em></sub></sub> + cpu<sub>manuf_base<sub><em>criteria</em></sub></sub></h3> 🔌 Usage  * ⏺️  Given  * 📈 Modeled  ⏬ Allocation
-pub async fn cpu_all_archetype_name_v1_component_cpu_archetype_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<CpuAllArchetypeNameV1ComponentCpuArchetypeGetError>> {
+/// # ✔️ Get the configuration of a given archetype
+pub async fn desktop_get_archetype_config_v1_terminal_desktop_archetype_config_get(configuration: &configuration::Configuration, archetype: &str) -> Result<serde_json::Value, Error<DesktopGetArchetypeConfigV1TerminalDesktopArchetypeConfigGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/cpu/archetype", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<CpuAllArchetypeNameV1ComponentCpuArchetypeGetError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-/// # ✔ ️CPU impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>cpu<sub>manuf<sub><em>criteria</em></sub></sub> = ( cpu<sub>core<sub>units</sub></sub> x cpu<sub>diesize</sub> + 0,491 ) x cpu<sub>manuf_die<sub><em>criteria</em></sub></sub> + cpu<sub>manuf_base<sub><em>criteria</em></sub></sub></h3> 🔌 Usage  * ⏺️  Given  * 📈 Modeled  ⏬ Allocation
-pub async fn cpu_archetype_config_v1_component_cpu_archetype_config_get(configuration: &configuration::Configuration, archetype: &str) -> Result<serde_json::Value, Error<CpuArchetypeConfigV1ComponentCpuArchetypeConfigGetError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/component/cpu/archetype_config", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/desktop/archetype_config", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     local_var_req_builder = local_var_req_builder.query(&[("archetype", &archetype.to_string())]);
@@ -463,29 +404,29 @@ pub async fn cpu_archetype_config_v1_component_cpu_archetype_config_get(configur
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CpuArchetypeConfigV1ComponentCpuArchetypeConfigGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<DesktopGetArchetypeConfigV1TerminalDesktopArchetypeConfigGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️CPU impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>cpu<sub>manuf<sub><em>criteria</em></sub></sub> = ( cpu<sub>core<sub>units</sub></sub> x cpu<sub>diesize</sub> + 0,491 ) x cpu<sub>manuf_die<sub><em>criteria</em></sub></sub> + cpu<sub>manuf_base<sub><em>criteria</em></sub></sub></h3> 🔌 Usage  * ⏺️  Given  * 📈 Modeled  ⏬ Allocation
-pub async fn cpu_impact_bottom_up_v1_component_cpu_get(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<CpuImpactBottomUpV1ComponentCpuGetError>> {
+/// # ✔ Terminal impacts ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are fix🔌 Usage  * ⏺️  Given  * 📋 Archetype  ⏬ Allocation
+pub async fn desktop_impact_v1_terminal_desktop_get(configuration: &configuration::Configuration, archetype: Option<&str>, verbose: Option<bool>, duration: Option<f32>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<DesktopImpactV1TerminalDesktopGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/cpu", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/desktop", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
+    if let Some(ref local_var_str) = archetype {
+        local_var_req_builder = local_var_req_builder.query(&[("archetype", &local_var_str.to_string())]);
+    }
     if let Some(ref local_var_str) = verbose {
         local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = duration {
         local_var_req_builder = local_var_req_builder.query(&[("duration", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = archetype {
-        local_var_req_builder = local_var_req_builder.query(&[("archetype", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = criteria {
         local_var_req_builder = match "multi" {
@@ -506,19 +447,19 @@ pub async fn cpu_impact_bottom_up_v1_component_cpu_get(configuration: &configura
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CpuImpactBottomUpV1ComponentCpuGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<DesktopImpactV1TerminalDesktopGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️CPU impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>cpu<sub>manuf<sub><em>criteria</em></sub></sub> = ( cpu<sub>core<sub>units</sub></sub> x cpu<sub>diesize</sub> + 0,491 ) x cpu<sub>manuf_die<sub><em>criteria</em></sub></sub> + cpu<sub>manuf_base<sub><em>criteria</em></sub></sub></h3> 🔌 Usage  * ⏺️  Given  * 📈 Modeled  ⏬ Allocation
-pub async fn cpu_impact_bottom_up_v1_component_cpu_post(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>, cpu: Option<crate::models::Cpu>) -> Result<serde_json::Value, Error<CpuImpactBottomUpV1ComponentCpuPostError>> {
+/// # ✔ Terminal impacts ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are fix🔌 Usage  * ⏺️  Given  * 📋 Archetype  ⏬ Allocation
+pub async fn desktop_impact_v1_terminal_desktop_post(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>, desktop: Option<crate::models::Desktop>) -> Result<serde_json::Value, Error<DesktopImpactV1TerminalDesktopPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/cpu", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/desktop", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
 
     if let Some(ref local_var_str) = verbose {
@@ -539,7 +480,7 @@ pub async fn cpu_impact_bottom_up_v1_component_cpu_post(configuration: &configur
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    local_var_req_builder = local_var_req_builder.json(&cpu);
+    local_var_req_builder = local_var_req_builder.json(&desktop);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -550,29 +491,86 @@ pub async fn cpu_impact_bottom_up_v1_component_cpu_post(configuration: &configur
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<CpuImpactBottomUpV1ComponentCpuPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<DesktopImpactV1TerminalDesktopPostError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️HDD impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are set by default🔌 Usage  * ⏺️  Given  ⏬ Allocation
-pub async fn disk_impact_bottom_up_v1_component_hdd_get(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<DiskImpactBottomUpV1ComponentHddGetError>> {
+/// # ✔️ Get all the available user terminal archetype for a given user terminal name
+pub async fn laptop_get_all_archetype_name_v1_terminal_laptop_archetypes_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<LaptopGetAllArchetypeNameV1TerminalLaptopArchetypesGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/hdd", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/laptop/archetypes", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<LaptopGetAllArchetypeNameV1TerminalLaptopArchetypesGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// # ✔️ Get the configuration of a given archetype
+pub async fn laptop_get_archetype_config_v1_terminal_laptop_archetype_config_get(configuration: &configuration::Configuration, archetype: &str) -> Result<serde_json::Value, Error<LaptopGetArchetypeConfigV1TerminalLaptopArchetypeConfigGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/terminal/laptop/archetype_config", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    local_var_req_builder = local_var_req_builder.query(&[("archetype", &archetype.to_string())]);
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<LaptopGetArchetypeConfigV1TerminalLaptopArchetypeConfigGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// # ✔ Terminal impacts ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are fix🔌 Usage  * ⏺️  Given  * 📋 Archetype  ⏬ Allocation
+pub async fn laptop_impact_v1_terminal_laptop_get(configuration: &configuration::Configuration, archetype: Option<&str>, verbose: Option<bool>, duration: Option<f32>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<LaptopImpactV1TerminalLaptopGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/terminal/laptop", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = archetype {
+        local_var_req_builder = local_var_req_builder.query(&[("archetype", &local_var_str.to_string())]);
+    }
     if let Some(ref local_var_str) = verbose {
         local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = duration {
         local_var_req_builder = local_var_req_builder.query(&[("duration", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = archetype {
-        local_var_req_builder = local_var_req_builder.query(&[("archetype", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = criteria {
         local_var_req_builder = match "multi" {
@@ -593,19 +591,19 @@ pub async fn disk_impact_bottom_up_v1_component_hdd_get(configuration: &configur
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<DiskImpactBottomUpV1ComponentHddGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<LaptopImpactV1TerminalLaptopGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️HDD impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are set by default🔌 Usage  * ⏺️  Given  ⏬ Allocation
-pub async fn disk_impact_bottom_up_v1_component_hdd_post(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>, disk: Option<crate::models::Disk>) -> Result<serde_json::Value, Error<DiskImpactBottomUpV1ComponentHddPostError>> {
+/// # ✔ Terminal impacts ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are fix🔌 Usage  * ⏺️  Given  * 📋 Archetype  ⏬ Allocation
+pub async fn laptop_impact_v1_terminal_laptop_post(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>, laptop: Option<crate::models::Laptop>) -> Result<serde_json::Value, Error<LaptopImpactV1TerminalLaptopPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/hdd", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/laptop", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
 
     if let Some(ref local_var_str) = verbose {
@@ -626,7 +624,7 @@ pub async fn disk_impact_bottom_up_v1_component_hdd_post(configuration: &configu
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    local_var_req_builder = local_var_req_builder.json(&disk);
+    local_var_req_builder = local_var_req_builder.json(&laptop);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -637,29 +635,86 @@ pub async fn disk_impact_bottom_up_v1_component_hdd_post(configuration: &configu
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<DiskImpactBottomUpV1ComponentHddPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<LaptopImpactV1TerminalLaptopPostError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️SSD impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>ssd<sub>manuf<sub><em>criteria</em></sub></sub> =  ( ssd<sub>size</sub> ssd<sub>density</sub> ) x ssd<sub>manuf_die<sub><em>criteria</em></sub></sub> + ssd<sub>manuf_base<sub><em>criteria</em></sub></sub></h3>🔌 Usage  * ⏺️  Given  ⏬ Allocation
-pub async fn disk_impact_bottom_up_v1_component_ssd_get(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<DiskImpactBottomUpV1ComponentSsdGetError>> {
+/// # ✔️ Get all the available user terminal archetype for a given user terminal name
+pub async fn smartphone_get_all_archetype_name_v1_terminal_smartphone_archetypes_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<SmartphoneGetAllArchetypeNameV1TerminalSmartphoneArchetypesGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/ssd", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/smartphone/archetypes", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<SmartphoneGetAllArchetypeNameV1TerminalSmartphoneArchetypesGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// # ✔️ Get the configuration of a given archetype
+pub async fn smartphone_get_archetype_config_v1_terminal_smartphone_archetype_config_get(configuration: &configuration::Configuration, archetype: &str) -> Result<serde_json::Value, Error<SmartphoneGetArchetypeConfigV1TerminalSmartphoneArchetypeConfigGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/terminal/smartphone/archetype_config", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    local_var_req_builder = local_var_req_builder.query(&[("archetype", &archetype.to_string())]);
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<SmartphoneGetArchetypeConfigV1TerminalSmartphoneArchetypeConfigGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// # ✔ Terminal impacts ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are fix🔌 Usage  * ⏺️  Given  * 📋 Archetype  ⏬ Allocation
+pub async fn smartphone_impact_v1_terminal_smartphone_get(configuration: &configuration::Configuration, archetype: Option<&str>, verbose: Option<bool>, duration: Option<f32>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<SmartphoneImpactV1TerminalSmartphoneGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/terminal/smartphone", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = archetype {
+        local_var_req_builder = local_var_req_builder.query(&[("archetype", &local_var_str.to_string())]);
+    }
     if let Some(ref local_var_str) = verbose {
         local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = duration {
         local_var_req_builder = local_var_req_builder.query(&[("duration", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = archetype {
-        local_var_req_builder = local_var_req_builder.query(&[("archetype", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = criteria {
         local_var_req_builder = match "multi" {
@@ -680,19 +735,19 @@ pub async fn disk_impact_bottom_up_v1_component_ssd_get(configuration: &configur
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<DiskImpactBottomUpV1ComponentSsdGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<SmartphoneImpactV1TerminalSmartphoneGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️SSD impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>ssd<sub>manuf<sub><em>criteria</em></sub></sub> =  ( ssd<sub>size</sub> ssd<sub>density</sub> ) x ssd<sub>manuf_die<sub><em>criteria</em></sub></sub> + ssd<sub>manuf_base<sub><em>criteria</em></sub></sub></h3>🔌 Usage  * ⏺️  Given  ⏬ Allocation
-pub async fn disk_impact_bottom_up_v1_component_ssd_post(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>, disk: Option<crate::models::Disk>) -> Result<serde_json::Value, Error<DiskImpactBottomUpV1ComponentSsdPostError>> {
+/// # ✔ Terminal impacts ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are fix🔌 Usage  * ⏺️  Given  * 📋 Archetype  ⏬ Allocation
+pub async fn smartphone_impact_v1_terminal_smartphone_post(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>, smartphone: Option<crate::models::Smartphone>) -> Result<serde_json::Value, Error<SmartphoneImpactV1TerminalSmartphonePostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/ssd", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/smartphone", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
 
     if let Some(ref local_var_str) = verbose {
@@ -713,7 +768,7 @@ pub async fn disk_impact_bottom_up_v1_component_ssd_post(configuration: &configu
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    local_var_req_builder = local_var_req_builder.json(&disk);
+    local_var_req_builder = local_var_req_builder.json(&smartphone);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -724,19 +779,19 @@ pub async fn disk_impact_bottom_up_v1_component_ssd_post(configuration: &configu
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<DiskImpactBottomUpV1ComponentSsdPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<SmartphoneImpactV1TerminalSmartphonePostError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️HDD impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are set by default🔌 Usage  * ⏺️  Given  ⏬ Allocation
-pub async fn hdd_all_archetype_name_v1_component_hdd_archetype_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<HddAllArchetypeNameV1ComponentHddArchetypeGetError>> {
+/// # ✔️ Get all the available user terminal archetype for a given user terminal name
+pub async fn tablet_get_all_archetype_name_v1_terminal_tablet_archetypes_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<TabletGetAllArchetypeNameV1TerminalTabletArchetypesGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/hdd/archetype", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/tablet/archetypes", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -752,76 +807,19 @@ pub async fn hdd_all_archetype_name_v1_component_hdd_archetype_get(configuration
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<HddAllArchetypeNameV1ComponentHddArchetypeGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<TabletGetAllArchetypeNameV1TerminalTabletArchetypesGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️HDD impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are set by default🔌 Usage  * ⏺️  Given  ⏬ Allocation
-pub async fn hdd_archetype_config_v1_component_hdd_archetype_config_get(configuration: &configuration::Configuration, archetype: &str) -> Result<serde_json::Value, Error<HddArchetypeConfigV1ComponentHddArchetypeConfigGetError>> {
+/// # ✔️ Get the configuration of a given archetype
+pub async fn tablet_get_archetype_config_v1_terminal_tablet_archetype_config_get(configuration: &configuration::Configuration, archetype: &str) -> Result<serde_json::Value, Error<TabletGetArchetypeConfigV1TerminalTabletArchetypeConfigGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/hdd/archetype_config", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    local_var_req_builder = local_var_req_builder.query(&[("archetype", &archetype.to_string())]);
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<HddArchetypeConfigV1ComponentHddArchetypeConfigGetError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-/// # ✔ ️Motherboard impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are set by default🔌 Usage  * ⏺️  Given  ⏬ Allocation
-pub async fn motherboard_all_archetype_name_v1_component_motherboard_archetype_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<MotherboardAllArchetypeNameV1ComponentMotherboardArchetypeGetError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/component/motherboard/archetype", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<MotherboardAllArchetypeNameV1ComponentMotherboardArchetypeGetError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-/// # ✔ ️Motherboard impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are set by default🔌 Usage  * ⏺️  Given  ⏬ Allocation
-pub async fn motherboard_archetype_config_v1_component_motherboard_archetype_config_get(configuration: &configuration::Configuration, archetype: &str) -> Result<serde_json::Value, Error<MotherboardArchetypeConfigV1ComponentMotherboardArchetypeConfigGetError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/component/motherboard/archetype_config", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/tablet/archetype_config", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     local_var_req_builder = local_var_req_builder.query(&[("archetype", &archetype.to_string())]);
@@ -838,168 +836,30 @@ pub async fn motherboard_archetype_config_v1_component_motherboard_archetype_con
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<MotherboardArchetypeConfigV1ComponentMotherboardArchetypeConfigGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<TabletGetArchetypeConfigV1TerminalTabletArchetypeConfigGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️Motherboard impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are set by default🔌 Usage  * ⏺️  Given  ⏬ Allocation
-pub async fn motherboard_impact_bottom_up_v1_component_motherboard_get(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<MotherboardImpactBottomUpV1ComponentMotherboardGetError>> {
+/// # ✔ Terminal impacts ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are fix🔌 Usage  * ⏺️  Given  * 📋 Archetype  ⏬ Allocation
+pub async fn tablet_impact_v1_terminal_tablet_get(configuration: &configuration::Configuration, archetype: Option<&str>, verbose: Option<bool>, duration: Option<f32>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<TabletImpactV1TerminalTabletGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/motherboard", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/tablet", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
-    if let Some(ref local_var_str) = verbose {
-        local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = duration {
-        local_var_req_builder = local_var_req_builder.query(&[("duration", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = criteria {
-        local_var_req_builder = match "multi" {
-            "multi" => local_var_req_builder.query(&local_var_str.into_iter().map(|p| ("criteria".to_owned(), p.to_string())).collect::<Vec<(std::string::String, std::string::String)>>()),
-            _ => local_var_req_builder.query(&[("criteria", &local_var_str.into_iter().map(|p| p.to_string()).collect::<Vec<String>>().join(",").to_string())]),
-        };
-    }
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<MotherboardImpactBottomUpV1ComponentMotherboardGetError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-/// # ✔ ️Motherboard impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are set by default🔌 Usage  * ⏺️  Given  ⏬ Allocation
-pub async fn motherboard_impact_bottom_up_v1_component_motherboard_post(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, criteria: Option<Vec<String>>, motherboard: Option<crate::models::Motherboard>) -> Result<serde_json::Value, Error<MotherboardImpactBottomUpV1ComponentMotherboardPostError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/component/motherboard", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_str) = verbose {
-        local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = duration {
-        local_var_req_builder = local_var_req_builder.query(&[("duration", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = criteria {
-        local_var_req_builder = match "multi" {
-            "multi" => local_var_req_builder.query(&local_var_str.into_iter().map(|p| ("criteria".to_owned(), p.to_string())).collect::<Vec<(std::string::String, std::string::String)>>()),
-            _ => local_var_req_builder.query(&[("criteria", &local_var_str.into_iter().map(|p| p.to_string()).collect::<Vec<String>>().join(",").to_string())]),
-        };
-    }
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-    local_var_req_builder = local_var_req_builder.json(&motherboard);
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<MotherboardImpactBottomUpV1ComponentMotherboardPostError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-/// # ✔ ️Power supply impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>psu<sub>manuf<sub><em>criteria</em></sub></sub> = psu<sub>unit<sub>weight</sub></sub> x psu<sub>manuf_weight<sub><em>criteria</em></sub></sub></h3> 🔌 Usage  * ⏺️  Given : shouldn't be used  ⏬ Allocation
-pub async fn power_supply_all_archetype_name_v1_component_power_supply_archetype_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<PowerSupplyAllArchetypeNameV1ComponentPowerSupplyArchetypeGetError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/component/power_supply/archetype", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<PowerSupplyAllArchetypeNameV1ComponentPowerSupplyArchetypeGetError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-/// # ✔ ️Power supply impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>psu<sub>manuf<sub><em>criteria</em></sub></sub> = psu<sub>unit<sub>weight</sub></sub> x psu<sub>manuf_weight<sub><em>criteria</em></sub></sub></h3> 🔌 Usage  * ⏺️  Given : shouldn't be used  ⏬ Allocation
-pub async fn power_supply_archetype_config_v1_component_power_supply_archetype_config_get(configuration: &configuration::Configuration, archetype: &str) -> Result<serde_json::Value, Error<PowerSupplyArchetypeConfigV1ComponentPowerSupplyArchetypeConfigGetError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/component/power_supply/archetype_config", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    local_var_req_builder = local_var_req_builder.query(&[("archetype", &archetype.to_string())]);
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<PowerSupplyArchetypeConfigV1ComponentPowerSupplyArchetypeConfigGetError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-/// # ✔ ️Power supply impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>psu<sub>manuf<sub><em>criteria</em></sub></sub> = psu<sub>unit<sub>weight</sub></sub> x psu<sub>manuf_weight<sub><em>criteria</em></sub></sub></h3> 🔌 Usage  * ⏺️  Given : shouldn't be used  ⏬ Allocation
-pub async fn power_supply_impact_bottom_up_v1_component_power_supply_get(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<PowerSupplyImpactBottomUpV1ComponentPowerSupplyGetError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/component/power_supply", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_str) = verbose {
-        local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = duration {
-        local_var_req_builder = local_var_req_builder.query(&[("duration", &local_var_str.to_string())]);
-    }
     if let Some(ref local_var_str) = archetype {
         local_var_req_builder = local_var_req_builder.query(&[("archetype", &local_var_str.to_string())]);
     }
+    if let Some(ref local_var_str) = verbose {
+        local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
+    }
+    if let Some(ref local_var_str) = duration {
+        local_var_req_builder = local_var_req_builder.query(&[("duration", &local_var_str.to_string())]);
+    }
     if let Some(ref local_var_str) = criteria {
         local_var_req_builder = match "multi" {
             "multi" => local_var_req_builder.query(&local_var_str.into_iter().map(|p| ("criteria".to_owned(), p.to_string())).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -1019,19 +879,19 @@ pub async fn power_supply_impact_bottom_up_v1_component_power_supply_get(configu
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<PowerSupplyImpactBottomUpV1ComponentPowerSupplyGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<TabletImpactV1TerminalTabletGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️Power supply impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>psu<sub>manuf<sub><em>criteria</em></sub></sub> = psu<sub>unit<sub>weight</sub></sub> x psu<sub>manuf_weight<sub><em>criteria</em></sub></sub></h3> 🔌 Usage  * ⏺️  Given : shouldn't be used  ⏬ Allocation
-pub async fn power_supply_impact_bottom_up_v1_component_power_supply_post(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>, power_supply: Option<crate::models::PowerSupply>) -> Result<serde_json::Value, Error<PowerSupplyImpactBottomUpV1ComponentPowerSupplyPostError>> {
+/// # ✔ Terminal impacts ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are fix🔌 Usage  * ⏺️  Given  * 📋 Archetype  ⏬ Allocation
+pub async fn tablet_impact_v1_terminal_tablet_post(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>, tablet: Option<crate::models::Tablet>) -> Result<serde_json::Value, Error<TabletImpactV1TerminalTabletPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/power_supply", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/tablet", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
 
     if let Some(ref local_var_str) = verbose {
@@ -1052,7 +912,7 @@ pub async fn power_supply_impact_bottom_up_v1_component_power_supply_post(config
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    local_var_req_builder = local_var_req_builder.json(&power_supply);
+    local_var_req_builder = local_var_req_builder.json(&tablet);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1063,19 +923,19 @@ pub async fn power_supply_impact_bottom_up_v1_component_power_supply_post(config
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<PowerSupplyImpactBottomUpV1ComponentPowerSupplyPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<TabletImpactV1TerminalTabletPostError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔️ RAM impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>ram<sub>manuf<sub><em>criteria</em></sub></sub> =( ram<sub>size</sub> / ram<sub>density</sub> ) x ram<sub>manuf_die<sub><em>criteria</em></sub></sub> + ram<sub>manuf_base<sub><em>criteria</em></sub></sub> </h3> 🔌 Usage  * ⏺️  Given  * 📈 Modeled  ⏬ Allocation
-pub async fn ram_all_archetype_name_v1_component_ram_archetype_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<RamAllArchetypeNameV1ComponentRamArchetypeGetError>> {
+/// # ✔️ Get all the available user terminal archetype for a given user terminal name
+pub async fn television_get_all_archetype_name_v1_terminal_television_archetypes_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<TelevisionGetAllArchetypeNameV1TerminalTelevisionArchetypesGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/ram/archetype", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/television/archetypes", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -1091,19 +951,19 @@ pub async fn ram_all_archetype_name_v1_component_ram_archetype_get(configuration
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<RamAllArchetypeNameV1ComponentRamArchetypeGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<TelevisionGetAllArchetypeNameV1TerminalTelevisionArchetypesGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔️ RAM impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>ram<sub>manuf<sub><em>criteria</em></sub></sub> =( ram<sub>size</sub> / ram<sub>density</sub> ) x ram<sub>manuf_die<sub><em>criteria</em></sub></sub> + ram<sub>manuf_base<sub><em>criteria</em></sub></sub> </h3> 🔌 Usage  * ⏺️  Given  * 📈 Modeled  ⏬ Allocation
-pub async fn ram_archetype_config_v1_component_ram_archetype_config_get(configuration: &configuration::Configuration, archetype: &str) -> Result<serde_json::Value, Error<RamArchetypeConfigV1ComponentRamArchetypeConfigGetError>> {
+/// # ✔️ Get the configuration of a given archetype
+pub async fn television_get_archetype_config_v1_terminal_television_archetype_config_get(configuration: &configuration::Configuration, archetype: &str) -> Result<serde_json::Value, Error<TelevisionGetArchetypeConfigV1TerminalTelevisionArchetypeConfigGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/ram/archetype_config", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/television/archetype_config", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     local_var_req_builder = local_var_req_builder.query(&[("archetype", &archetype.to_string())]);
@@ -1120,29 +980,29 @@ pub async fn ram_archetype_config_v1_component_ram_archetype_config_get(configur
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<RamArchetypeConfigV1ComponentRamArchetypeConfigGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<TelevisionGetArchetypeConfigV1TerminalTelevisionArchetypeConfigGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔️ RAM impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>ram<sub>manuf<sub><em>criteria</em></sub></sub> =( ram<sub>size</sub> / ram<sub>density</sub> ) x ram<sub>manuf_die<sub><em>criteria</em></sub></sub> + ram<sub>manuf_base<sub><em>criteria</em></sub></sub> </h3> 🔌 Usage  * ⏺️  Given  * 📈 Modeled  ⏬ Allocation
-pub async fn ram_impact_bottom_up_v1_component_ram_get(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<RamImpactBottomUpV1ComponentRamGetError>> {
+/// # ✔ Terminal impacts ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are fix🔌 Usage  * ⏺️  Given  * 📋 Archetype  ⏬ Allocation
+pub async fn television_impact_v1_terminal_television_get(configuration: &configuration::Configuration, archetype: Option<&str>, verbose: Option<bool>, duration: Option<f32>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<TelevisionImpactV1TerminalTelevisionGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/ram", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/television", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
+    if let Some(ref local_var_str) = archetype {
+        local_var_req_builder = local_var_req_builder.query(&[("archetype", &local_var_str.to_string())]);
+    }
     if let Some(ref local_var_str) = verbose {
         local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = duration {
         local_var_req_builder = local_var_req_builder.query(&[("duration", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = archetype {
-        local_var_req_builder = local_var_req_builder.query(&[("archetype", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = criteria {
         local_var_req_builder = match "multi" {
@@ -1163,19 +1023,19 @@ pub async fn ram_impact_bottom_up_v1_component_ram_get(configuration: &configura
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<RamImpactBottomUpV1ComponentRamGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<TelevisionImpactV1TerminalTelevisionGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔️ RAM impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>ram<sub>manuf<sub><em>criteria</em></sub></sub> =( ram<sub>size</sub> / ram<sub>density</sub> ) x ram<sub>manuf_die<sub><em>criteria</em></sub></sub> + ram<sub>manuf_base<sub><em>criteria</em></sub></sub> </h3> 🔌 Usage  * ⏺️  Given  * 📈 Modeled  ⏬ Allocation
-pub async fn ram_impact_bottom_up_v1_component_ram_post(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>, ram: Option<crate::models::Ram>) -> Result<serde_json::Value, Error<RamImpactBottomUpV1ComponentRamPostError>> {
+/// # ✔ Terminal impacts ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  The impacts values are fix🔌 Usage  * ⏺️  Given  * 📋 Archetype  ⏬ Allocation
+pub async fn television_impact_v1_terminal_television_post(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>, television: Option<crate::models::Television>) -> Result<serde_json::Value, Error<TelevisionImpactV1TerminalTelevisionPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/ram", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/television", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
 
     if let Some(ref local_var_str) = verbose {
@@ -1196,7 +1056,7 @@ pub async fn ram_impact_bottom_up_v1_component_ram_post(configuration: &configur
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    local_var_req_builder = local_var_req_builder.json(&ram);
+    local_var_req_builder = local_var_req_builder.json(&television);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1207,19 +1067,19 @@ pub async fn ram_impact_bottom_up_v1_component_ram_post(configuration: &configur
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<RamImpactBottomUpV1ComponentRamPostError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<TelevisionImpactV1TerminalTelevisionPostError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️SSD impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>ssd<sub>manuf<sub><em>criteria</em></sub></sub> =  ( ssd<sub>size</sub> ssd<sub>density</sub> ) x ssd<sub>manuf_die<sub><em>criteria</em></sub></sub> + ssd<sub>manuf_base<sub><em>criteria</em></sub></sub></h3>🔌 Usage  * ⏺️  Given  ⏬ Allocation
-pub async fn ssd_all_archetype_name_v1_component_ssd_archetype_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<SsdAllArchetypeNameV1ComponentSsdArchetypeGetError>> {
+/// # ✔️ Get all the available user terminal router
+pub async fn terminal_get_all_categories_v1_terminal_all_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<TerminalGetAllCategoriesV1TerminalAllGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/component/ssd/archetype", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/terminal/all", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -1235,36 +1095,7 @@ pub async fn ssd_all_archetype_name_v1_component_ssd_archetype_get(configuration
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<SsdAllArchetypeNameV1ComponentSsdArchetypeGetError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-/// # ✔ ️SSD impacts from configuration ### Features  👄 Verbose  🔃 Auto-complete  🔨 Embedded  <h3>ssd<sub>manuf<sub><em>criteria</em></sub></sub> =  ( ssd<sub>size</sub> ssd<sub>density</sub> ) x ssd<sub>manuf_die<sub><em>criteria</em></sub></sub> + ssd<sub>manuf_base<sub><em>criteria</em></sub></sub></h3>🔌 Usage  * ⏺️  Given  ⏬ Allocation
-pub async fn ssd_archetype_config_v1_component_ssd_archetype_config_get(configuration: &configuration::Configuration, archetype: &str) -> Result<serde_json::Value, Error<SsdArchetypeConfigV1ComponentSsdArchetypeConfigGetError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/component/ssd/archetype_config", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    local_var_req_builder = local_var_req_builder.query(&[("archetype", &archetype.to_string())]);
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<SsdArchetypeConfigV1ComponentSsdArchetypeConfigGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<TerminalGetAllCategoriesV1TerminalAllGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
