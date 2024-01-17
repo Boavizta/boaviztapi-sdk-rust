@@ -82,7 +82,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
 **duration** | Option<**f32**> |  |  |
-**archetype** | Option<**String**> |  |  |[default to compute_medium]
+**archetype** | Option<**String**> |  |  |[default to platform_compute_medium]
 **criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
 **server** | Option<[**Server**](Server.md)> |  |  |
 
@@ -114,7 +114,7 @@ Server Impact From Model
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**archetype** | Option<**String**> |  |  |[default to compute_medium]
+**archetype** | Option<**String**> |  |  |[default to platform_compute_medium]
 **verbose** | Option<**bool**> |  |  |[default to true]
 **duration** | Option<**f32**> |  |  |
 **criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
