@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**welcom_page_get**](DefaultApi.md#welcom_page_get) | **GET** / | Welcom Page
+[**welcome_page_get**](DefaultApi.md#welcome_page_get) | **GET** / | Welcome Page
 
 
 
-## welcom_page_get
+## welcome_page_get
 
-> String welcom_page_get()
-Welcom Page
+> String welcome_page_get()
+Welcome Page
 
 ### Parameters
 

@@ -1,9 +1,9 @@
 /*
  * BOAVIZTAPI - DEMO
  *
- * <p>🎯 Retrieving the impacts of digital elements.</p> <p>This is a quick demo, to see full documentation <a href=\"https://doc.api.boavizta.org\">click here</a></p> <h2>Features</h2> <p>Bellow a list of all available features. Implemented features are specified in each route.</p> <h3>👄 Verbose</h3> <p>Verbose is an HTTP parameter. If set at true :</p> <ul> <li>Shows the impacts of each component</li> <li>Shows the value used for each attributes</li> </ul> <p><em>\"attribute\": {\"value\": \"value\", \"unit\": \"unit\", \"status\": \"Status\", \"source\": \"Source\"}</em></p> <h3>🔨 Manufacture</h3> <ul> <li>Manufacture impacts of devices are the sum of the impacts of its components</li> <li>Manufacture impacts equations of components are given for each component</li> </ul> <h3>🔌  Usage</h3> <p>Usage impacts are measured by multiplying :</p> <ul> <li> <p>a <strong>duration</strong></p> </li> <li> <p>an <strong>impact factor</strong> </p> </li> <li> <p>an <strong>electrical consumption</strong> </p> </li> </ul> <h4>⏲ Duration</h4> <p>Usage impacts are given for a specific time duration. Duration can be given in :</p> <ul> <li>HOURS : <em>usage:{hours_use_time: 1}</em></li> <li>DAYS : <em>usage:{days_use_time: 1}</em></li> <li>YEARS : <em>usage:{years_use_time: 1}</em> </li> </ul> <p>If no duration is given, <strong>the impact is measured for a year</strong>.</p> <p><em>Note</em> : units are cumulative</p> <h4>✖️ Impact factors</h4> <ul> <li>Impact factors can be given : <em>usage:{[criterion]_factors: 0.38}</em></li> <li>Impact factors can be retrieved from : <em>usage:{usage_location: \"FRA\"}</em>. </li> </ul> <p><em>See the list of locations : <a href=\"/v1/utils/country_code\">/v1/utils/country_code</a></em></p> <h4>⚡ Electrical consumption</h4> <h5>⏺️ Given</h5> <ul> <li>Electrical consumption can be given for one hour (average) <em>usage:{hours_electrical_consumption: 1}</em>.</li> </ul> <h5>📈 Modeled</h5> <ul> <li>Electrical consumption can be retrieved from consumption profile using <em>usage:{time_workload: 50}</em>. </li> </ul> <h3>🔃 Auto-complete</h3> <p>The API will complete the missing attributes in a request. Components have different completion strategies. Devices have minimal required components. If not given in the request a component with default characteristics is used.</p> <h3>📋 Archetype</h3> <p>If an archetype is given, the missing attributes will be complete with the archetypes attributes instead of default attributes</p> <h3>⏬ Allocation</h3> <p>Allocation is an HTTP parameter. </p> <ul> <li>If set at TOTAL, the total manufacture impact is returned.</li> <li>If set at LINEAR the manufacture impact is allocated linearly hover a specific lifespan given or set by default : <em>{\"usage\":{\"years_life_time\":1}}</em></li> </ul>
+ * <p>🎯 Retrieving the impacts of digital elements.</p> <p>This is a quick demo, to see full documentation <a href=\"https://doc.api.boavizta.org\">click here</a></p> <h2>Features</h2> <p>Bellow a list of all available features.</p> <h3>👄 Verbose</h3> <p>Verbose is an HTTP parameter. If set at true :</p> <ul> <li>Shows the impacts of each component</li> <li>Shows the value used for each attribute</li> </ul> <p><em>\"attribute\": {\"value\": \"value\", \"unit\": \"unit\", \"status\": \"Status\", \"source\": \"Source\", \"min\":\"min\", \"max\":\"max\", \"significant_figures\":\"significant_figures\"}</em></p> <h3>🔨 Embedded</h3> <ul> <li>Embedded impacts are the impacts occurring during raw material extraction, manufacture, distribution and end of life</li> <li>When end of life is not taken into account, we specified it in the <code>warnings</code></li> </ul> <h3>🔌  Usage</h3> <p>Usage impacts are assessed by multiplying :</p> <ul> <li> <p>a <strong>duration</strong></p> </li> <li> <p>an <strong>impact factor</strong> </p> </li> <li> <p>an <strong>electrical consumption</strong> </p> </li> </ul> <h4>⏲ Duration</h4> <p>Usage impacts can be given as a router parameter, in hours.</p> <p>If no duration is given, <strong>the impact is assess for the all life duration of the asset</strong>.</p> <h4>✖️ Impact factors</h4> <ul> <li>Impact factors can be given : <em>\"usage\":{\"elec_factors\":{[criterion]_factors: 0.38}}</em></li> <li> <p>Impact factors can be retrieved from : <em>\"usage\":{\"usage_location\": \"FRA\"}</em>. </p> </li> <li> <p>See the list of locations : <a href=\"/v1/utils/country_code\">/v1/utils/country_code</a>*</p> </li> </ul> <h4>⚡ Electrical consumption</h4> <h5>⏺️ Given</h5> <ul> <li>Electrical consumption can be given for one hour (average) <em>\"usage\":{\"avg_power\": 1}</em>.</li> </ul> <h5>📈 Modeled</h5> <ul> <li>Electrical consumption can be retrieved from consumption profile using <em>usage:{time_workload: 50}</em>.</li> </ul> <h5>📋 Archetype</h5> <ul> <li>In some cases, default electrical consumption can be taken from the archetype</li> </ul> <h3>🔃 Auto-complete &amp; 📋 Archetype</h3> <p>The API will complete the missing attributes in a request with a completion function or with values taken from the <code>archetype</code> specified in the route parameter.</p> <h3>⏬ Allocation</h3> <ul> <li>Usage impacts are assessed on the duration given in route parameter</li> <li>Embedded impacts are allocated linearly on the duration given in parameter <code>embedded_impact = impact * (duration/life_duration)</code></li> </ul> <p>If no duration is given, the life_duration (<code>`hours_life_time</code>) of the asset is used.</p>
  *
- * The version of the OpenAPI document: 0.2.2
+ * The version of the OpenAPI document: 1.0.0a3
  * 
  * Generated by: https://openapi-generator.tech
  */
@@ -51,6 +51,20 @@ pub enum UtilsGetAllCpuModelRangeV1UtilsCpuModelRangeGetError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`utils_get_all_cpu_name_v1_utils_cpu_name_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum UtilsGetAllCpuNameV1UtilsCpuNameGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`utils_get_all_impacts_criteria_v1_utils_impact_criteria_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum UtilsGetAllImpactsCriteriaV1UtilsImpactCriteriaGetError {
+    UnknownValue(serde_json::Value),
+}
+
 /// struct for typed errors of method [`utils_get_all_ram_manufacturer_v1_utils_ram_manufacturer_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -67,7 +81,7 @@ pub enum UtilsGetAllSsdManufacturerV1UtilsSsdManufacturerGetError {
 
 
 /// # ✔ ️Complete a cpu attributes from a cpu name
-pub async fn name_to_cpu_v1_utils_name_to_cpu_get(configuration: &configuration::Configuration, cpu_name: Option<&str>) -> Result<serde_json::Value, Error<NameToCpuV1UtilsNameToCpuGetError>> {
+pub async fn name_to_cpu_v1_utils_name_to_cpu_get(configuration: &configuration::Configuration, cpu_name: &str) -> Result<serde_json::Value, Error<NameToCpuV1UtilsNameToCpuGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -75,9 +89,7 @@ pub async fn name_to_cpu_v1_utils_name_to_cpu_get(configuration: &configuration:
     let local_var_uri_str = format!("{}/v1/utils/name_to_cpu", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
-    if let Some(ref local_var_str) = cpu_name {
-        local_var_req_builder = local_var_req_builder.query(&[("cpu_name", &local_var_str.to_string())]);
-    }
+    local_var_req_builder = local_var_req_builder.query(&[("cpu_name", &cpu_name.to_string())]);
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
@@ -204,6 +216,62 @@ pub async fn utils_get_all_cpu_model_range_v1_utils_cpu_model_range_get(configur
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<UtilsGetAllCpuModelRangeV1UtilsCpuModelRangeGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// # ✔ ️Get all the available cpu name in the API (*cpu:{name:'intel xeon platinum 8175m'}*)
+pub async fn utils_get_all_cpu_name_v1_utils_cpu_name_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<UtilsGetAllCpuNameV1UtilsCpuNameGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/utils/cpu_name", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<UtilsGetAllCpuNameV1UtilsCpuNameGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+/// # ✔ ️Get all the available criteria for the impacts calculation
+pub async fn utils_get_all_impacts_criteria_v1_utils_impact_criteria_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<UtilsGetAllImpactsCriteriaV1UtilsImpactCriteriaGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/utils/impact_criteria", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<UtilsGetAllImpactsCriteriaV1UtilsImpactCriteriaGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

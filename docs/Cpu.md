@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**units** | Option<**i32**> |  | [optional][default to 1]
+**units** | Option<**i32**> |  | [optional]
 **usage** | Option<[**crate::models::Usage1**](Usage_1.md)> |  | [optional]
 **core_units** | Option<**i32**> |  | [optional]
 **die_size** | Option<**f32**> |  | [optional]
