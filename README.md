@@ -4,7 +4,7 @@ Rust client library for [Boaviztapi](https://github.com/Boavizta/boaviztapi).
 
 ## Versions supported
 
-- SDK version 0.3.X supports Boavizata API of the 0.3.x series
+- SDK version 0.3.X supports Boavizta API of the 0.3.x series
 - SDK version 0.2.x support Boavizta API of the 0.2.x series (Neither SDK nor API will not be updated after release of Boavizta API v0.3.x - around June 2023)
 
 ## Documentation
