@@ -61,4 +61,12 @@ version = "^0.11"
 default-features = false 
 features = ["json", "multipart", "rustls-tls"]
 ```
+## How to publish the SDK
 
+This is a manual action and should be done only by the maintainer of the SDK.
+
+```sh
+cargo login
+cargo publish --dry-run
+cargo publish
+```
