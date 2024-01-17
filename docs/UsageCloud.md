@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **avg_power** | Option<**f32**> |  | [optional]
 **time_workload** | Option<[**crate::models::TimeWorkload**](Time_Workload.md)> |  | [optional]
 **usage_location** | Option<**String**> |  | [optional]
-**elec_factors** | Option<[**crate::models::ElecFactors**](Elec_Factors.md)> |  | [optional]
+**elec_factors** | Option<[**crate::models::ElecFactors**](ElecFactors.md)> |  | [optional][default to {}]
 **other_consumption_ratio** | Option<**f32**> |  | [optional]
 **instance_per_server** | Option<**i32**> |  | [optional]
 

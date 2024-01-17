@@ -15,61 +15,47 @@ use crate::apis::ResponseContent;
 use super::{Error, configuration};
 
 
-/// struct for typed errors of method [`get_archetype_config_v1_cloud_instance_instance_config_get`]
+/// struct for typed errors of method [`get_archetype_config_v1_iot_iot_device_archetype_config_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum GetArchetypeConfigV1CloudInstanceInstanceConfigGetError {
+pub enum GetArchetypeConfigV1IotIotDeviceArchetypeConfigGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`instance_cloud_impact_v1_cloud_instance_get`]
+/// struct for typed errors of method [`iot_device_get_all_archetype_name_v1_iot_iot_device_archetypes_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum InstanceCloudImpactV1CloudInstanceGetError {
+pub enum IotDeviceGetAllArchetypeNameV1IotIotDeviceArchetypesGetError {
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`iot_device_impact_v1_iot_iot_device_get`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum IotDeviceImpactV1IotIotDeviceGetError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`instance_cloud_impact_v1_cloud_instance_post`]
+/// struct for typed errors of method [`iot_device_impact_v1_iot_iot_device_post`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum InstanceCloudImpactV1CloudInstancePostError {
+pub enum IotDeviceImpactV1IotIotDevicePostError {
     Status422(crate::models::HttpValidationError),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`server_get_all_archetype_name_v1_cloud_instance_all_instances_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ServerGetAllArchetypeNameV1CloudInstanceAllInstancesGetError {
-    Status422(crate::models::HttpValidationError),
-    UnknownValue(serde_json::Value),
-}
 
-/// struct for typed errors of method [`server_get_all_provider_name_v1_cloud_instance_all_providers_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ServerGetAllProviderNameV1CloudInstanceAllProvidersGetError {
-    UnknownValue(serde_json::Value),
-}
-
-
-/// # ✔️ Get the configuration of a given instance
-pub async fn get_archetype_config_v1_cloud_instance_instance_config_get(configuration: &configuration::Configuration, provider: Option<&str>, instance_type: Option<&str>) -> Result<serde_json::Value, Error<GetArchetypeConfigV1CloudInstanceInstanceConfigGetError>> {
+pub async fn get_archetype_config_v1_iot_iot_device_archetype_config_get(configuration: &configuration::Configuration, archetype: &str) -> Result<serde_json::Value, Error<GetArchetypeConfigV1IotIotDeviceArchetypeConfigGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/cloud/instance/instance_config", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/iot/iot_device/archetype_config", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
-    if let Some(ref local_var_str) = provider {
-        local_var_req_builder = local_var_req_builder.query(&[("provider", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_str) = instance_type {
-        local_var_req_builder = local_var_req_builder.query(&[("instance_type", &local_var_str.to_string())]);
-    }
+    local_var_req_builder = local_var_req_builder.query(&[("archetype", &archetype.to_string())]);
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
@@ -83,26 +69,49 @@ pub async fn get_archetype_config_v1_cloud_instance_instance_config_get(configur
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<GetArchetypeConfigV1CloudInstanceInstanceConfigGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<GetArchetypeConfigV1IotIotDeviceArchetypeConfigGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️Cloud instance impacts from provider, instance type and usage  Retrieve the impacts of a given Cloud instance and usage.  ### Features  📋 Provider   Name of the cloud provider. You can retrieve the [list here](#/cloud_instance/server_get_all_cloud_providers).  📋 Instance type   Name of the chosen instance. You can retrieve the [list here](#/cloud/server_get_archetype_name_v1_cloud_all_aws_instances_get).  👄 Verbose  🔨 Embedded  🔌 Usage   * 📈 Modeled  📋 Archetype : The configuration is set by the API, only usage is given by the user  ⏬ Allocation
-pub async fn instance_cloud_impact_v1_cloud_instance_get(configuration: &configuration::Configuration, provider: Option<&str>, instance_type: Option<&str>, verbose: Option<bool>, duration: Option<f32>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<InstanceCloudImpactV1CloudInstanceGetError>> {
+pub async fn iot_device_get_all_archetype_name_v1_iot_iot_device_archetypes_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<IotDeviceGetAllArchetypeNameV1IotIotDeviceArchetypesGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/cloud/instance", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/iot/iot_device/archetypes", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
-    if let Some(ref local_var_str) = provider {
-        local_var_req_builder = local_var_req_builder.query(&[("provider", &local_var_str.to_string())]);
+    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
+        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    if let Some(ref local_var_str) = instance_type {
-        local_var_req_builder = local_var_req_builder.query(&[("instance_type", &local_var_str.to_string())]);
+
+    let local_var_req = local_var_req_builder.build()?;
+    let local_var_resp = local_var_client.execute(local_var_req).await?;
+
+    let local_var_status = local_var_resp.status();
+    let local_var_content = local_var_resp.text().await?;
+
+    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
+        serde_json::from_str(&local_var_content).map_err(Error::from)
+    } else {
+        let local_var_entity: Option<IotDeviceGetAllArchetypeNameV1IotIotDeviceArchetypesGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
+        Err(Error::ResponseError(local_var_error))
+    }
+}
+
+pub async fn iot_device_impact_v1_iot_iot_device_get(configuration: &configuration::Configuration, archetype: Option<&str>, verbose: Option<bool>, duration: Option<f32>, criteria: Option<Vec<String>>) -> Result<serde_json::Value, Error<IotDeviceImpactV1IotIotDeviceGetError>> {
+    let local_var_configuration = configuration;
+
+    let local_var_client = &local_var_configuration.client;
+
+    let local_var_uri_str = format!("{}/v1/iot/iot_device", local_var_configuration.base_path);
+    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
+
+    if let Some(ref local_var_str) = archetype {
+        local_var_req_builder = local_var_req_builder.query(&[("archetype", &local_var_str.to_string())]);
     }
     if let Some(ref local_var_str) = verbose {
         local_var_req_builder = local_var_req_builder.query(&[("verbose", &local_var_str.to_string())]);
@@ -129,19 +138,18 @@ pub async fn instance_cloud_impact_v1_cloud_instance_get(configuration: &configu
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<InstanceCloudImpactV1CloudInstanceGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<IotDeviceImpactV1IotIotDeviceGetError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }
 }
 
-/// # ✔ ️Cloud instance impacts from provider, instance type and usage  Retrieve the impacts of a given Cloud instance and usage.  ### Features  📋 Provider   Name of the cloud provider. You can retrieve the [list here](#/cloud_instance/server_get_all_cloud_providers).  📋 Instance type   Name of the chosen instance. You can retrieve the [list here](#/cloud/server_get_archetype_name_v1_cloud_all_aws_instances_get).  👄 Verbose  🔨 Embedded  🔌 Usage   * 📈 Modeled  📋 Archetype : The configuration is set by the API, only usage is given by the user  ⏬ Allocation
-pub async fn instance_cloud_impact_v1_cloud_instance_post(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, criteria: Option<Vec<String>>, cloud: Option<crate::models::Cloud>) -> Result<serde_json::Value, Error<InstanceCloudImpactV1CloudInstancePostError>> {
+pub async fn iot_device_impact_v1_iot_iot_device_post(configuration: &configuration::Configuration, verbose: Option<bool>, duration: Option<f32>, archetype: Option<&str>, criteria: Option<Vec<String>>, io_t: Option<crate::models::IoT>) -> Result<serde_json::Value, Error<IotDeviceImpactV1IotIotDevicePostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/v1/cloud/instance", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/v1/iot/iot_device", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
 
     if let Some(ref local_var_str) = verbose {
@@ -150,6 +158,9 @@ pub async fn instance_cloud_impact_v1_cloud_instance_post(configuration: &config
     if let Some(ref local_var_str) = duration {
         local_var_req_builder = local_var_req_builder.query(&[("duration", &local_var_str.to_string())]);
     }
+    if let Some(ref local_var_str) = archetype {
+        local_var_req_builder = local_var_req_builder.query(&[("archetype", &local_var_str.to_string())]);
+    }
     if let Some(ref local_var_str) = criteria {
         local_var_req_builder = match "multi" {
             "multi" => local_var_req_builder.query(&local_var_str.into_iter().map(|p| ("criteria".to_owned(), p.to_string())).collect::<Vec<(std::string::String, std::string::String)>>()),
@@ -159,7 +170,7 @@ pub async fn instance_cloud_impact_v1_cloud_instance_post(configuration: &config
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    local_var_req_builder = local_var_req_builder.json(&cloud);
+    local_var_req_builder = local_var_req_builder.json(&io_t);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -170,66 +181,7 @@ pub async fn instance_cloud_impact_v1_cloud_instance_post(configuration: &config
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<InstanceCloudImpactV1CloudInstancePostError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-/// # ✔ ️Get all the available instances for a given Cloud provider 📜 Return the name of all pre-registered instances for the Cloud provider
-pub async fn server_get_all_archetype_name_v1_cloud_instance_all_instances_get(configuration: &configuration::Configuration, provider: Option<&str>) -> Result<serde_json::Value, Error<ServerGetAllArchetypeNameV1CloudInstanceAllInstancesGetError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/cloud/instance/all_instances", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_str) = provider {
-        local_var_req_builder = local_var_req_builder.query(&[("provider", &local_var_str.to_string())]);
-    }
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<ServerGetAllArchetypeNameV1CloudInstanceAllInstancesGetError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
-/// # ✔ ️Get all the available Cloud providers 📜 Return the names of all pre-registered Cloud providers
-pub async fn server_get_all_provider_name_v1_cloud_instance_all_providers_get(configuration: &configuration::Configuration, ) -> Result<serde_json::Value, Error<ServerGetAllProviderNameV1CloudInstanceAllProvidersGetError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/v1/cloud/instance/all_providers", local_var_configuration.base_path);
-    let mut local_var_req_builder = local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder = local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<ServerGetAllProviderNameV1CloudInstanceAllProvidersGetError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<IotDeviceImpactV1IotIotDevicePostError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

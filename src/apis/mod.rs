@@ -94,6 +94,7 @@ pub mod cloud_api;
 pub mod component_api;
 pub mod consumption_profile_api;
 pub mod default_api;
+pub mod iot_api;
 pub mod peripheral_api;
 pub mod server_api;
 pub mod terminal_api;

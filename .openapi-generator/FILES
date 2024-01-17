@@ -16,7 +16,10 @@ docs/Disk.md
 docs/ElecFactors.md
 docs/ExternalHdd.md
 docs/ExternalSsd.md
+docs/FunctionalBlock.md
 docs/HttpValidationError.md
+docs/IoT.md
+docs/IotApi.md
 docs/Laptop.md
 docs/LocationInner.md
 docs/ModelServer.md
@@ -33,7 +36,6 @@ docs/Television.md
 docs/TerminalApi.md
 docs/TimeWorkload.md
 docs/Usage.md
-docs/Usage1.md
 docs/UsageCloud.md
 docs/UsageServer.md
 docs/UsbStick.md
@@ -47,6 +49,7 @@ src/apis/component_api.rs
 src/apis/configuration.rs
 src/apis/consumption_profile_api.rs
 src/apis/default_api.rs
+src/apis/iot_api.rs
 src/apis/mod.rs
 src/apis/peripheral_api.rs
 src/apis/server_api.rs
@@ -63,7 +66,9 @@ src/models/disk.rs
 src/models/elec_factors.rs
 src/models/external_hdd.rs
 src/models/external_ssd.rs
+src/models/functional_block.rs
 src/models/http_validation_error.rs
+src/models/io_t.rs
 src/models/laptop.rs
 src/models/location_inner.rs
 src/models/mod.rs
@@ -79,7 +84,6 @@ src/models/tablet.rs
 src/models/television.rs
 src/models/time_workload.rs
 src/models/usage.rs
-src/models/usage_1.rs
 src/models/usage_cloud.rs
 src/models/usage_server.rs
 src/models/usb_stick.rs

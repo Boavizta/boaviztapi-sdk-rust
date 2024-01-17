@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **units** | Option<**i32**> |  | [optional]
-**usage** | Option<[**crate::models::Usage1**](Usage_1.md)> |  | [optional]
+**usage** | Option<[**crate::models::Usage**](Usage.md)> |  | [optional][default to {"elec_factors":{}}]
 **r#type** | Option<**String**> |  | [optional]
 **capacity** | Option<**i32**> |  | [optional]
 **density** | Option<**f32**> |  | [optional]
