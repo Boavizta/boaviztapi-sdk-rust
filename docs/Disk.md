@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **units** | Option<**i32**> |  | [optional]
-**usage** | Option<[**crate::models::Usage**](Usage.md)> |  | [optional][default to {"elec_factors":{}}]
+**usage** | Option<[**models::Usage**](Usage.md)> |  | [optional]
 **r#type** | Option<**String**> |  | [optional]
 **capacity** | Option<**i32**> |  | [optional]
-**density** | Option<**f32**> |  | [optional]
+**density** | Option<**f64**> |  | [optional]
 **manufacturer** | Option<**String**> |  | [optional]
 **model** | Option<**String**> |  | [optional]
 **layers** | Option<**i32**> |  | [optional]

@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**model** | Option<[**crate::models::ModelServer**](ModelServer.md)> |  | [optional]
-**configuration** | Option<[**crate::models::ConfigurationServer**](ConfigurationServer.md)> |  | [optional]
-**usage** | Option<[**crate::models::UsageCloud**](UsageCloud.md)> |  | [optional]
+**model** | Option<[**models::ModelServer**](ModelServer.md)> |  | [optional]
+**configuration** | Option<[**models::ConfigurationServer**](ConfigurationServer.md)> |  | [optional]
+**usage** | Option<[**models::UsageCloud**](UsageCloud.md)> |  | [optional]
 **provider** | Option<**String**> |  | [optional]
 **instance_type** | Option<**String**> |  | [optional]
 
