@@ -95,8 +95,8 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **archetype** | Option<**String**> |  |  |[default to hdd-default]
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**duration** | Option<**f64**> |  |  |
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -127,9 +127,9 @@ External Hdd Impact
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to hdd-default]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **external_hdd** | Option<[**ExternalHdd**](ExternalHdd.md)> |  |  |
 
 ### Return type
@@ -219,8 +219,8 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **archetype** | Option<**String**> |  |  |[default to external-ssd-default]
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**duration** | Option<**f64**> |  |  |
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -251,9 +251,9 @@ External Ssd Impact
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to external-ssd-default]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **external_ssd** | Option<[**ExternalSsd**](ExternalSsd.md)> |  |  |
 
 ### Return type
@@ -343,8 +343,8 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **archetype** | Option<**String**> |  |  |[default to monitor-default]
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**duration** | Option<**f64**> |  |  |
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -375,9 +375,9 @@ Monitor Impact
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to monitor-default]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **monitor** | Option<[**Monitor**](Monitor.md)> |  |  |
 
 ### Return type
@@ -494,8 +494,8 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **archetype** | Option<**String**> |  |  |[default to usb-stick-default]
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**duration** | Option<**f64**> |  |  |
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -526,9 +526,9 @@ Usb Stick Impact
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to usb-stick-default]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **usb_stick** | Option<[**UsbStick**](UsbStick.md)> |  |  |
 
 ### Return type

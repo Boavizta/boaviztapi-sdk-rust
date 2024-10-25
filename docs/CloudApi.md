@@ -58,8 +58,8 @@ Name | Type | Description  | Required | Notes
 **provider** | Option<**String**> |  |  |[default to aws]
 **instance_type** | Option<**String**> |  |  |[default to a1.4xlarge]
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**duration** | Option<**f64**> |  |  |
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -90,8 +90,8 @@ Instance Cloud Impact
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**duration** | Option<**f64**> |  |  |
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **cloud** | Option<[**Cloud**](Cloud.md)> |  |  |
 
 ### Return type

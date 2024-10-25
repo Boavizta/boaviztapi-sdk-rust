@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**loc** | [**Vec<crate::models::LocationInner>**](Location_inner.md) |  | 
+**loc** | [**Vec<models::ValidationErrorLocInner>**](ValidationError_loc_inner.md) |  | 
 **msg** | **String** |  | 
 **r#type** | **String** |  | 
 

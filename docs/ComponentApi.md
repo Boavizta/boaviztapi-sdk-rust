@@ -106,9 +106,9 @@ Case Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to rack]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -139,9 +139,9 @@ Case Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to rack]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **case** | Option<[**Case**](Case.md)> |  |  |
 
 ### Return type
@@ -257,9 +257,9 @@ Cpu Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to DEFAULT]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -290,9 +290,9 @@ Cpu Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to DEFAULT]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **cpu** | Option<[**Cpu**](Cpu.md)> |  |  |
 
 ### Return type
@@ -324,9 +324,9 @@ Disk Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to DEFAULT]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -357,9 +357,9 @@ Disk Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to DEFAULT]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **disk** | Option<[**Disk**](Disk.md)> |  |  |
 
 ### Return type
@@ -391,9 +391,9 @@ Disk Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to DEFAULT]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -424,9 +424,9 @@ Disk Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to DEFAULT]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **disk** | Option<[**Disk**](Disk.md)> |  |  |
 
 ### Return type
@@ -572,8 +572,8 @@ Motherboard Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**duration** | Option<**f64**> |  |  |
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -604,8 +604,8 @@ Motherboard Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**duration** | Option<**f64**> |  |  |
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **motherboard** | Option<[**Motherboard**](Motherboard.md)> |  |  |
 
 ### Return type
@@ -694,9 +694,9 @@ Power Supply Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to DEFAULT]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -727,9 +727,9 @@ Power Supply Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to DEFAULT]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **power_supply** | Option<[**PowerSupply**](PowerSupply.md)> |  |  |
 
 ### Return type
@@ -818,9 +818,9 @@ Ram Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to DEFAULT]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -851,9 +851,9 @@ Ram Impact Bottom Up
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to DEFAULT]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **ram** | Option<[**Ram**](Ram.md)> |  |  |
 
 ### Return type

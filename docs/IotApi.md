@@ -76,8 +76,8 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **archetype** | Option<**String**> |  |  |[default to iot-device-default]
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**duration** | Option<**f64**> |  |  |
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -106,9 +106,9 @@ Iot Device Impact
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to iot-device-default]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **io_t** | Option<[**IoT**](IoT.md)> |  |  |
 
 ### Return type

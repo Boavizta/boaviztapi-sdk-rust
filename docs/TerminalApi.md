@@ -103,8 +103,8 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **archetype** | Option<**String**> |  |  |[default to box-default]
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**duration** | Option<**f64**> |  |  |
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -135,9 +135,9 @@ Box Impact
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to box-default]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **r#box** | Option<[**Box**](Box.md)> |  |  |
 
 ### Return type
@@ -227,8 +227,8 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **archetype** | Option<**String**> |  |  |[default to desktop-pro]
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**duration** | Option<**f64**> |  |  |
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -259,9 +259,9 @@ Desktop Impact
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to desktop-pro]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **desktop** | Option<[**Desktop**](Desktop.md)> |  |  |
 
 ### Return type
@@ -351,8 +351,8 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **archetype** | Option<**String**> |  |  |[default to laptop-pro]
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**duration** | Option<**f64**> |  |  |
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -383,9 +383,9 @@ Laptop Impact
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to laptop-pro]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **laptop** | Option<[**Laptop**](Laptop.md)> |  |  |
 
 ### Return type
@@ -475,8 +475,8 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **archetype** | Option<**String**> |  |  |[default to smartphone-default]
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**duration** | Option<**f64**> |  |  |
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -507,9 +507,9 @@ Smartphone Impact
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to smartphone-default]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **smartphone** | Option<[**Smartphone**](Smartphone.md)> |  |  |
 
 ### Return type
@@ -599,8 +599,8 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **archetype** | Option<**String**> |  |  |[default to tablet-default]
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**duration** | Option<**f64**> |  |  |
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -631,9 +631,9 @@ Tablet Impact
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to tablet-default]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **tablet** | Option<[**Tablet**](Tablet.md)> |  |  |
 
 ### Return type
@@ -723,8 +723,8 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **archetype** | Option<**String**> |  |  |[default to tv-pro]
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**duration** | Option<**f64**> |  |  |
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 
 ### Return type
 
@@ -755,9 +755,9 @@ Television Impact
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **verbose** | Option<**bool**> |  |  |[default to true]
-**duration** | Option<**f32**> |  |  |
+**duration** | Option<**f64**> |  |  |
 **archetype** | Option<**String**> |  |  |[default to tv-pro]
-**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to ["gwp","adp","pe"]]
+**criteria** | Option<[**Vec<String>**](String.md)> |  |  |[default to [gwp, adp, pe]]
 **television** | Option<[**Television**](Television.md)> |  |  |
 
 ### Return type

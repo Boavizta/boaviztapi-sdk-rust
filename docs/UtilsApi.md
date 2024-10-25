@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**utils_get_all_impacts_criteria_v1_utils_impact_criteria_get**](UtilsApi.md#utils_get_all_impacts_criteria_v1_utils_impact_criteria_get) | **GET** /v1/utils/impact_criteria | Utils Get All Impacts Criteria
 [**utils_get_all_ram_manufacturer_v1_utils_ram_manufacturer_get**](UtilsApi.md#utils_get_all_ram_manufacturer_v1_utils_ram_manufacturer_get) | **GET** /v1/utils/ram_manufacturer | Utils Get All Ram Manufacturer
 [**utils_get_all_ssd_manufacturer_v1_utils_ssd_manufacturer_get**](UtilsApi.md#utils_get_all_ssd_manufacturer_v1_utils_ssd_manufacturer_get) | **GET** /v1/utils/ssd_manufacturer | Utils Get All Ssd Manufacturer
+[**version_v1_utils_version_get**](UtilsApi.md#version_v1_utils_version_get) | **GET** /v1/utils/version | Version
 
 
 
@@ -241,6 +242,33 @@ No authorization required
 Utils Get All Ssd Manufacturer
 
 # ✔ ️Get all the available ssd manufacturer in the API (*ssd:{manufacturer:'samsung'}*)
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**serde_json::Value**](serde_json::Value.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## version_v1_utils_version_get
+
+> serde_json::Value version_v1_utils_version_get()
+Version
+
+Get the version of the API
 
 ### Parameters
 
