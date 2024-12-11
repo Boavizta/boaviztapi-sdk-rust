@@ -2,6 +2,15 @@
 
 Rust client library for [Boaviztapi](https://github.com/Boavizta/boaviztapi).
 
+> [!NOTE]
+> The code of this library is _mostly_ generated automatically from the OpenAPI specification of Boavizta API.
+>
+> Still, some part are patched manually (See https://github.com/Boavizta/boaviztapi-sdk-rust/issues/6).
+>
+> This library is used and tested in the context of cloud scanner, so we know that API routes related to cloud work well. But it may still contain bugs for other non-cloud API routes.
+> 
+> Please open an issue if you notice such behavior.
+
 ## Versions supported
 
 - SDK version 1.3.3 supports Boavizta API 1.3.3
@@ -11,6 +20,8 @@ Rust client library for [Boaviztapi](https://github.com/Boavizta/boaviztapi).
 - SDK version 1.0.1 supports Boavizta API 1.0.1 (and historical 0.3.x series)
 - SDK version 0.3.X supports Boavizta API of the 0.3.x series
 - SDK version 0.2.x support Boavizta API of the 0.2.x series (Neither SDK nor API will not be updated after release of Boavizta API v0.3.x - around June 2023)
+
+
 
 ## Documentation
 
