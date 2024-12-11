@@ -48,7 +48,7 @@ To generate the SDK for a *specific* version of BoaviztaAPI (e.g.  a dev branch 
 Metadata of Cargo.toml are overwritten by generation.
 
 1. verify that version of package is consistent
-1. update it with the following values
+2. update it with the following values
 
 ```toml
 description = "A Rust client/sdk to access Boavizta API"
@@ -56,7 +56,7 @@ homepage = "https://boavizta.org"
 repository = "https://github.com/Boavizta/boaviztapi-sdk-rust/"
 readme = "README.md"
 authors = ["boavizta.org", "olivier de Meringo"]
-edition = "2018"
+edition = "2021"
 license-file = "LICENSE"
 ```
 
@@ -64,10 +64,11 @@ Ensure that the dependency on `reqwest`  does not use native SSL(the default fea
 
 ```toml
 [dependencies.reqwest]
-version = "^0.11"
+version = "^0.12"
 default-features = false 
 features = ["json", "multipart", "rustls-tls"]
 ```
+
 ## How to publish the SDK
 
 This is a manual action and should be done only by the maintainer of the SDK.
