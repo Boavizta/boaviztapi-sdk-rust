@@ -4,6 +4,7 @@ Rust client library for [Boaviztapi](https://github.com/Boavizta/boaviztapi).
 
 ## Versions supported
 
+- SDK version 1.3.3 supports Boavizta API 1.3.3
 - SDK version 1.3.0 supports Boavizta API 1.3
 - SDK version 1.2.0 supports Boavizta API 1.2.0
 - SDK version 1.1.0 supports Boavizta API 1.1.0
@@ -24,9 +25,12 @@ We use openapi-generator-cli to generate the SDK. See [GitHub - OpenAPITools/ope
 
 ```sh
 # Generate for public API
-docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate -i https://api.boavizta.org/openapi.json   -g rust  -o /local/ --package-name boavizta_api_sdk
-# Local API (dev, using network host /!\)
-docker run --network=host --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate -i http://localhost:5000/openapi.json  -g rust  -o /local/ --package-name boavizta_api_sdk
+docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli:v7.10.0 generate -i https://api.boavizta.org/openapi.json   -g rust  -o /local/ --package-name boavizta_api_sdk
+```
+
+```sh
+# Generate against a Local API (dev, using network host /!\)
+docker run --network=host --rm -v "${PWD}:/local" openapitools/openapi-generator-cli:v7.10.0 generate -i http://localhost:5000/openapi.json  -g rust  -o /local/ --package-name boavizta_api_sdk
 ```
 
 The generated code require some manual updates before being usable.
